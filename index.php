@@ -122,7 +122,8 @@ echo "Nuliu yra: $countZero. Veinetu yra: $countOne. Dvejetu yra: $countTwo.";
 echo '<br>';
 
 echo '<br>';
-echo 'Sesta uzduotis:';
+// septinta uzduotis
+echo '<h3>' . 'Sesta uzduotis:' . '</h3>' . '<br>';
 $atvaizduotiKintamaji = rand(1, 6);
 echo '<h' . $atvaizduotiKintamaji . '>' . $atvaizduotiKintamaji . '</h' . $atvaizduotiKintamaji . '>';
 echo '<br>';
