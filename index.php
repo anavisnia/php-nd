@@ -158,6 +158,12 @@ echo '<br>';
 
 echo '<br>';
 // sesta uzduotis *************************************************************
+/*
+Naudokite funkcija rand(). 
+Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage. 
+Pvz skaičius 3- rezultatas: <h3>3</h3>
+
+*/
 echo '<h3>' . 'Sesta uzduotis:' . '</h3>' . '<br>';
 $atvaizduotiKintamaji = rand(1, 6);
 echo '<h' . $atvaizduotiKintamaji . '>' . $atvaizduotiKintamaji . '</h' . $atvaizduotiKintamaji . '>';
