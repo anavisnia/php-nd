@@ -1,5 +1,9 @@
 <?php
 // pirma uzduotuis
+/*
+Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
+"Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+*/
 echo '<h3>' . 'Pirma uzduotis:' . '</h3>' . '<br>';
 $vardas = 'Ana';
 $pavarde = 'Visnevskaja';
@@ -10,6 +14,12 @@ echo "As esu $vardas $pavarde. Man yra $amzius metai.";
 echo '<br>';
 
 // antra uzduotuis
+/*
+Naudokite funkcija rand(). 
+Sukurkite du kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. 
+Didesnę reikšmę padalinkite iš mažesnės. 
+Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
+*/
 echo '<h3>' . 'Antra uzduotis:' . '</h3>' . '<br>';
 $num1 = rand(0, 4);
 $num2 = rand(0, 4);
@@ -47,6 +57,9 @@ if ($num1 !== 0 && $num2 !== 0) {
 }
 
 // trecia uzduotis
+/*
+Naudokite funkcija rand(). Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
+*/
 echo '<br>';
 echo '<h3>' . 'Trecia uzduotis:' . '</h3>' . '<br>';
 $random1 = rand(0, 25);
@@ -54,14 +67,21 @@ $random2 = rand(0, 25);
 $random3 = rand(0, 25);
 echo "Pirmas skaicius: $random1. Antras skaicius: $random2. Trecias skaicius: $random3.";
 echo '<br>';
-if ($random1 === 12) {
-    echo 'Radau, tai yra $random1: ' . $random1;
-}
-if ($random2 === 12) {
-    echo 'Radau, tai yra $random2: ' . $random2;
-}
-if ($random3 === 12) {
-    echo 'Radau, tai yra $random3: ' . $random3;
+
+if ($random1 >= $random2 && $random1 >= $random3) {
+    if ($random2 > $random3) {
+        echo "Vidurinis skaicius: $random2";
+    } else {
+        echo "Vidurinis skaicius: $random3";
+    }
+} else if ($random1 <= $random2 && $random1 <= $random3) {
+    if ($random2 < $random3) {
+        echo "Vidurinis skaicius: $random2";
+    } else {
+        echo "Vidurinis skaicius: $random3";
+    }
+} else {
+    echo "Vidurinis skaicius: $random1";
 }
 echo '<br>';
 
