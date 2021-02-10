@@ -58,7 +58,9 @@ if ($num1 !== 0 && $num2 !== 0) {
 
 // trecia uzduotis
 /*
-Naudokite funkcija rand(). Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
+Naudokite funkcija rand(). 
+Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. 
+Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
 */
 echo '<br>';
 echo '<h3>' . 'Trecia uzduotis:' . '</h3>' . '<br>';
@@ -86,6 +88,10 @@ if ($random1 >= $random2 && $random1 >= $random3) {
 echo '<br>';
 
 // ketvirta uzduotis
+/*
+Įvedami skaičiai -a, b, c –kraštinių ilgiai, trys kintamieji (naudokite ​rand()​ funkcija nuo 1 iki 10). 
+Parašykite PHP programą, kuri nustatytų, ar galima sudaryti trikampį ir atsakymą atspausdintų. 
+*/
 echo '<h3>' . 'Ketvirta uzduotis:' . '</h3>' . '<br>';
 $a = rand(1, 10);
 $b = rand(1, 10);
