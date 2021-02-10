@@ -99,9 +99,9 @@ $c = rand(1, 10);
 echo "a = $a, b = $b, c = $c";
 echo '<br>';
 if ($a + $b > $c && $a + $c > $b && $b + $c > $a) {
-    echo "Toks trikampis gali buti nubrazitas. Kintamasis a = $a, kintamasis b = $b, kintamasis c = $c.";
+    echo "Toks trikampis gali buti. Kintamasis a = $a, kintamasis b = $b, kintamasis c = $c.";
 } else {
-    echo 'Negalima nubraiziti toki trikampi!';
+    echo 'Toks trikampis negali buti!';
 }
 echo '<br>';
 
