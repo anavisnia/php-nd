@@ -18,21 +18,21 @@ echo '<br>';
 echo "Antras skaicius: $num2";
 echo '<br>';
 
-// if ($num1 > $num2 || $num1 === $num2) {
-//     if ($num1 === 0 || $num2 === 0) {
-//         echo 'Pabaiga';
-//         return;
-//     }
-//     $dev = $num1 / $num2;
-//     echo round($dev, 2);
-// } elseif ($num2 > $num1) {
-//     if ($num1 === 0 || $num2 === 0) {
-//         echo 'Pabaiga';
-//         return;
-//     }
-//     $dev = $num2 / $num1;
-//     echo round($dev, 2);
-// }
+if ($num1 > $num2 || $num1 === $num2) {
+    if ($num1 === 0 || $num2 === 0) {
+        echo 'Pabaiga';
+        return;
+    }
+    $dev = $num1 / $num2;
+    echo round($dev, 2);
+} elseif ($num2 > $num1) {
+    if ($num1 === 0 || $num2 === 0) {
+        echo 'Pabaiga';
+        return;
+    }
+    $dev = $num2 / $num1;
+    echo round($dev, 2);
+}
 
 // trecia uzduotis
 echo '<br>';
@@ -78,15 +78,7 @@ $countOne = 0;
 $countTwo = 0;
 echo "Pirmas skaicius: $kint1. Antras skaicius: $kint2. Trecias skaicus: $kint3. Ketvirtas skaicius: $kint4.";
 echo '<br>';
-// if ($kint1 === 0 || $kint2 === 0 || $kint3 === 0 || $kint4 === 0) {
-//     $countZero++;
-// }
-// if ($kint1 === 1 || $kint2 === 1 || $kint3 === 1 || $kint4 === 1) {
-//     $countOne++;
-// }
-// if ($kint1 === 2 || $kint2 === 2 || $kint3 === 2 || $kint4 === 2) {
-//     $countTwo++;
-// }
+
 if ($kint1 === 0) {
     $countZero++;
 } elseif ($kint1 === 1) {
