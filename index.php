@@ -105,7 +105,12 @@ if ($a + $b > $c && $a + $c > $b && $b + $c > $a) {
 }
 echo '<br>';
 
-// penkta uzduotis
+// penkta uzduotis ******************************************************************
+/*
+Sukurkite keturis kintamuosius 
+ir ​rand()​ funkcija sugeneruokite jiems reikšmes nuo 0 iki 2. 
+Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. (sprendimui masyvo nenaudoti).
+*/
 echo '<h3>' . 'Penkta uzduotis:' . '</h3>' . '<br>';
 $kint1 = rand(0, 2);
 $kint2 = rand(0, 2);
@@ -152,13 +157,13 @@ echo "Nuliu yra: $countZero. Veinetu yra: $countOne. Dvejetu yra: $countTwo.";
 echo '<br>';
 
 echo '<br>';
-// septinta uzduotis
+// sesta uzduotis *************************************************************
 echo '<h3>' . 'Sesta uzduotis:' . '</h3>' . '<br>';
 $atvaizduotiKintamaji = rand(1, 6);
 echo '<h' . $atvaizduotiKintamaji . '>' . $atvaizduotiKintamaji . '</h' . $atvaizduotiKintamaji . '>';
 echo '<br>';
 
-// septinta uzduotis
+// septinta uzduotis **********************************************************************
 echo '<h3>' . 'Septinta uzduotis:' . '</h3>' . '<br>';
 /*
 Naudokite funkcija rand(). 
@@ -194,7 +199,7 @@ if ($coloredNum3 < 0) {
     echo '<p style="color:blue">' . $coloredNum3 . '</p>';
 }
 
-//astunta uzduotis
+//astunta uzduotis *****************************************************************
 echo '<h3>' . 'Astunta uzduotis:' . '</h3>' . '<br>';
 /*
 Įmonė parduoda žvakes po 1 EUR. 
@@ -219,7 +224,7 @@ if ($zvakiuKiekis > 1000 && $zvakiuKiekis < 2000) {
 }
 echo '<br>';
 
-// devinta uzduotis
+// devinta uzduotis ********************************************************************
 echo '<h3>' . 'Devinta uzduotis:' . '</h3>' . '<br>';
 /*
 Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. 
@@ -262,7 +267,7 @@ $aritVid2Roudn = round($aritVidurkis2, 0);
 echo $aritVid2Roudn;
 echo '<br>';
 
-// desimta uzduotis
+// desimta uzduotis **********************************************************************
 echo '<h3>' . 'Desimta uzduotis:' . '</h3>' . '<br>';
 /*
 Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. 
