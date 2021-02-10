@@ -18,20 +18,32 @@ echo '<br>';
 echo "Antras skaicius: $num2";
 echo '<br>';
 
-if ($num1 > $num2 || $num1 === $num2) {
-    if ($num1 === 0 || $num2 === 0) {
-        echo 'Pabaiga';
-        return;
+// if ($num1 > $num2 || $num1 === $num2) {
+//     if ($num1 !== 0 || $num2 !== 0) {
+//         echo 'Pabaiga';
+//         return;
+//     }
+//     $dev = $num1 / $num2;
+//     echo round($dev, 2);
+// } elseif ($num2 > $num1) {
+//     if ($num1 !== 0 || $num2 !== 0) {
+//         echo 'Pabaiga';
+//         return;
+//     }
+//     $dev = $num2 / $num1;
+//     echo round($dev, 2);
+// }
+
+if ($num1 !== 0 && $num2 !== 0) {
+    if ($num1 > $num2 || $num1 === $num2) {
+        $dev = $num1 / $num2;
+        echo round($dev, 2);
+    } elseif ($num2 > $num1) {
+        $dev = $num2 / $num1;
+        echo round($dev, 2);
     }
-    $dev = $num1 / $num2;
-    echo round($dev, 2);
-} elseif ($num2 > $num1) {
-    if ($num1 === 0 || $num2 === 0) {
-        echo 'Pabaiga';
-        return;
-    }
-    $dev = $num2 / $num1;
-    echo round($dev, 2);
+} else if ($num1 === 0 || $num2 === 0) {
+    echo 'Dalinti negalima!';
 }
 
 // trecia uzduotis
