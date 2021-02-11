@@ -10,7 +10,7 @@ Atspausdinti trumpesnį stringą.
 */
 $actorName = 'Emma';
 $actorLName = 'Roberts';
-if (strlen($actorName) > strlen($actorLName)) {
+if (strlen($actorName) < strlen($actorLName)) {
     echo $actorName;
 } else {
     echo $actorLName;
