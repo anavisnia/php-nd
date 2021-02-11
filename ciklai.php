@@ -18,3 +18,14 @@ while ($i <= 400) {
     }
     $i++;
 }
+
+
+//antra
+echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
+$numbers = [];
+for ($i = 0; $i <= 300; $i++) {
+    $randomNum = rand(0, 300);
+    array_push($numbers, $randomNum);
+}
+// echo '<pre>';
+// print_r($numbers);
