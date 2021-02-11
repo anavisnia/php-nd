@@ -64,7 +64,7 @@ Jame visas “a” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.
 Rezultatą atspausdinti.
 */
 $string = "An Amorecan in Paris";
-$replaceWith = array('a', 'A');
+$replaceWith = ['a', 'A'];
 $replace = '*';
 echo (str_replace($replaceWith, $replace, $string));
 
@@ -91,7 +91,7 @@ Kodą pakartoti su stringais: “Breakfast at Tiffany's”,
 “It's a Wonderful Life”.
 */
 $string = "An Amorecan in Paris";
-$vowels = array("a", "e", "i", "o", "u", "y", "w", "A", "E", "I", "O", "U", "Y", "W", " ");
+$vowels = ["a", "e", "i", "o", "u", "y", "w", "A", "E", "I", "O", "U", "Y", "W", " "];
 $replacedStr = str_replace($vowels, "", $string);
 echo '<br>';
 echo $replacedStr;
@@ -141,7 +141,7 @@ $explode2 = explode(" ", $stringToBeSplitted2);
 $countWords2 = 0;
 
 foreach ($explode2 as $oneWord) {
-    if (strlen($oneWord) <= 5) {
+    if (mb_strlen($oneWord) <= 5) {
         $countWords2 += 1;
     }
 }
@@ -154,7 +154,7 @@ echo '<br>' . '<h3>' . 'Desimta uzduotis:' . '</h3>' . '<br>';
 Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. 
 Stringo ilgis 3 simboliai.
 */
-$abc = array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z");
+$abc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 $randomWord = '';
 $arrayLength = count($abc) - 1;
 $pirmaRaide = rand(0, $arrayLength);
