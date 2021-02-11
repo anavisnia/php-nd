@@ -1,5 +1,5 @@
 <?php
-echo '<h1>String namu darbai</h1>' . '<br>';
+echo '<h1>String</h1>' . '<br>';
 
 // pirma uzduotis
 echo '<h3>' . 'Pirma uzduotis:' . '</h3>' . '<br>';
