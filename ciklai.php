@@ -79,3 +79,93 @@ for ($i = 1; $i <= 25; $i++) {
     }
     echo '<br>';
 }
+
+//Sesta
+echo '<br>' . '<h3>' . 'Sesta Uzduotis' . '</h3>' . '<br>';
+$flipCoinResults = '';
+$match = NULL;
+// 0 - herbas
+// 1 - skaicius
+echo "Scenarijus a: <br>";
+do {
+    $flipCoin = rand(0, 1);
+    if ($flipCoin === 1) {
+        echo 'S' . '<br>';
+    } else {
+        echo 'H' . '<br>';
+    }
+} while ($flipCoin !== 0);
+
+echo "<br> Scenarijus b: <br>";
+$herbCount = 0;
+
+do {
+    $flipCoin = rand(0, 1);
+    if ($flipCoin === 1) {
+        echo 'S' . '<br>';
+    } else {
+        echo 'H' . '<br>';
+        $herbCount++;
+    }
+} while ($herbCount !== 3);
+
+echo "<br> Scenarijus c: <br>";
+do {
+    $flipCoin = rand(0, 1);
+    if ($flipCoin === 1) {
+        echo 'S' . '<br>';
+        $flipCoinResults .= 'S';
+    } else {
+        echo 'H' . '<br>';
+        $flipCoinResults .= 'H';
+    }
+} while (!str_contains($flipCoinResults, 'HHH'));
+
+echo "<br> Scenarijus d: <br>";
+do {
+    $flipCoin = rand(0, 1);
+    if ($flipCoin === 1) {
+        echo 'S' . '<br>';
+        $flipCoinResults .= 'S';
+    } else {
+        echo 'H' . '<br>';
+        $flipCoinResults .= 'H';
+    }
+} while (!str_contains($flipCoinResults, 'SSS'));
+
+//Septinta
+echo '<br>' . '<h3>' . 'Septinta Uzduotis' . '</h3>' . '<br>';
+$player1Name = 'Petras';
+$players1ScoreSum = 0;
+$player2Name = 'Kazis';
+$players2ScoreSum = 0;
+
+do {
+    $players1Score = rand(10, 20);
+    $players2Score = rand(5, 25);
+    $players1ScoreSum += $players1Score;
+    $players2ScoreSum += $players2Score;
+} while ($players1ScoreSum <= 222 || $players2ScoreSum <= 222);
+if ($players1ScoreSum >= 222 && $players1ScoreSum > $players2ScoreSum) {
+    echo "$player1Name surinko: $players1ScoreSum. $player2Name surinko: $players2ScoreSum. Partija laimejo: $player1Name!";
+} elseif ($players2ScoreSum >= 222 && $players1ScoreSum < $players2ScoreSum) {
+    echo "$player1Name surinko: $players1ScoreSum. $player2Name surinko: $players2ScoreSum. Partija laimejo: $player2Name!";
+} elseif ($players1ScoreSum === $players2ScoreSum) {
+    echo "$player1Name surinko: $players1ScoreSum. $player2Name surinko: $players2ScoreSum. Partija laimejo: Abu!";
+}
+
+//Astunta
+echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
+// $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+// echo $colorRGB;
+echo '<p>' . 'Rombas 21 x 21:' . '</p>' . '<br>';
+
+echo '<p>' . 'Kvadratas 21 x 21:' . '</p>';
+for ($i = 1; $i <= 21; $i++) {
+    $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+    echo '<br>' . "<span style=\"padding:4px;color:rgb($colorRGB);\">*</span> ";
+    for ($j = 1; $j <= 20; $j++) {
+        $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+        echo "<span style=\"padding:4px;color:rgb($colorRGB);\">*</span> ";;
+    }
+}
