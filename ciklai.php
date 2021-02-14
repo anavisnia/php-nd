@@ -57,7 +57,6 @@ echo $stringAibe;
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
-echo '<p>' . 'Dar ne iki galo' . '</p>';
 
 $string = '*';
 // echo '<div style="display:block;width:100%">';
@@ -83,7 +82,6 @@ for ($i = 1; $i <= 25; $i++) {
 //Sesta
 echo '<br>' . '<h3>' . 'Sesta Uzduotis' . '</h3>' . '<br>';
 $flipCoinResults = '';
-$match = NULL;
 // 0 - herbas
 // 1 - skaicius
 echo "Scenarijus a: <br>";
@@ -161,11 +159,39 @@ echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
 echo '<p>' . 'Rombas 21 x 21:' . '</p>' . '<br>';
 
 echo '<p>' . 'Kvadratas 21 x 21:' . '</p>';
+echo "<pre>";
 for ($i = 1; $i <= 21; $i++) {
     $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
-    echo '<br>' . "<span style=\"padding:4px;color:rgb($colorRGB);\">*</span> ";
+    echo '<br>' . "<span style=\"padding:0px;color:rgb($colorRGB);\">*</span> ";
     for ($j = 1; $j <= 20; $j++) {
         $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
-        echo "<span style=\"padding:4px;color:rgb($colorRGB);\">*</span> ";;
+        echo "<span style=\"padding:0px;color:rgb($colorRGB);\">*</span> ";
     }
 }
+
+// echo '<br>' . '*' . "&nbsp;*" . '*' . '<br>';
+// echo "&nbsp;" . '<br>';
+
+echo "<pre>";
+for ($i = 1; $i < 11; $i++) {
+    for ($j = $i; $j < 11; $j++) {
+        echo "&nbsp;&nbsp;";
+    }
+    for ($j = 2 * $i - 1; $j > 0; $j--) {
+        $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+        echo "&nbsp;<span style=\"padding:0px;color:rgb($colorRGB);\">*</span>";
+    }
+    echo "<br>";
+}
+
+for ($i = 11; $i > 0; $i--) {
+    for ($j = 11 - $i; $j > 0; $j--) {
+        echo "&nbsp;&nbsp;";
+    }
+    for ($j = 2 * $i - 1; $j > 0; $j--) {
+        $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+        echo "&nbsp;<span style=\"padding:0px;color:rgb($colorRGB);\">*</span>";
+    }
+    echo "<br>";
+}
+echo "</pre>";
