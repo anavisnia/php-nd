@@ -223,6 +223,11 @@ echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.;"
 
 //Desimta
 echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
+/*
+Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+a)
+“Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+*/
 $vinisIlgis = 85; // 8.5 cm
 $smugis = rand(5, 20); //mm
 // 1cm = 10 mm
@@ -242,3 +247,8 @@ for ($i = 1; $i <= 5; $i++) {
     echo '<br>';
 }
 echo "Mums reikia $smugiuSkaiciokle smugiu.";
+
+/*
+b)
+“Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+*/
