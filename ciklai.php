@@ -120,6 +120,7 @@ do {
 } while (!str_contains($flipCoinResults, 'HHH'));
 
 echo "<br> Scenarijus d: <br>";
+$flipCoinResults = '';
 do {
     $flipCoin = rand(0, 1);
     if ($flipCoin === 1) {
@@ -158,20 +159,6 @@ echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
 // echo $colorRGB;
 echo '<p>' . 'Rombas 21 x 21:' . '</p>' . '<br>';
 
-echo '<p>' . 'Kvadratas 21 x 21:' . '</p>';
-echo "<pre>";
-for ($i = 1; $i <= 21; $i++) {
-    $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
-    echo '<br>' . "<span style=\"padding:0px;color:rgb($colorRGB);\">*</span> ";
-    for ($j = 1; $j <= 20; $j++) {
-        $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
-        echo "<span style=\"padding:0px;color:rgb($colorRGB);\">*</span> ";
-    }
-}
-
-// echo '<br>' . '*' . "&nbsp;*" . '*' . '<br>';
-// echo "&nbsp;" . '<br>';
-
 echo "<pre>";
 for ($i = 1; $i < 11; $i++) {
     for ($j = $i; $j < 11; $j++) {
@@ -194,7 +181,22 @@ for ($i = 11; $i > 0; $i--) {
     }
     echo "<br>";
 }
-echo "</pre>";
+// echo "</pre>";
+
+echo '<p>' . 'Kvadratas 21 x 21:' . '</p>';
+
+for ($i = 1; $i <= 21; $i++) {
+    $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+    echo '<br>' . "<span style=\"padding:1px;color:rgb($colorRGB);\">*</span> ";
+    for ($j = 1; $j <= 20; $j++) {
+        $colorRGB = rand(0, 252) . ', ' . rand(0, 252) . ', ' . rand(0, 252);
+        echo "<span style=\"padding:1px;color:rgb($colorRGB);\">*</span> ";
+    }
+}
+echo '</pre>';
+// echo '<br>' . '*' . "&nbsp;*" . '*' . '<br>';
+// echo "&nbsp;" . '<br>';
+
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
@@ -236,19 +238,42 @@ for ($i = 1; $i <= 5; $i++) {
     $smugioGilis = 0;
     while ($smugioGilis <= 85) {
         $rand = rand(5, 20);
-        if ($smugioGilis + $rand <= 85) {
-            $smugioGilis += $rand;
-            $smugiuSkaiciokle++;
-        } else {
-            break;
-        }
-        // echo $smugioGilis . '<br>';
+        $smugioGilis += $rand;
+        $smugiuSkaiciokle++;
     }
-    echo '<br>';
+    // while ($smugioGilis <= 85) {
+    //     $rand = rand(5, 20);
+    //     if ($smugioGilis + $rand <= 85) {
+    //         $smugioGilis += $rand;
+    //         $smugiuSkaiciokle++;
+    //     } else {
+    //         break;
+    //     }
+    // echo $smugioGilis . '<br>';
+    // }
+    // echo '<br>';
 }
-echo "Mums reikia $smugiuSkaiciokle smugiu.";
+echo "Dalis a: Mums reikia $smugiuSkaiciokle smugiu/smugis.";
 
 /*
 b)
 “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
 */
+
+$smugis = rand(20, 30);
+$smugiuSkaiciokle = 0;
+$kiekNepataikeKartu = 0;
+for ($i = 1; $i <= 5; $i++) {
+    $smugioGilis = 0;
+    while ($smugioGilis <= 85) {
+        $nepataikis = rand(0, 1);
+        if ($nepataikis === 0) {
+            $kiekNepataikeKartu++;
+        } else {
+            $rand = rand(5, 20);
+            $smugioGilis += $rand;
+            $smugiuSkaiciokle++;
+        }
+    }
+}
+echo "<br>Dalis b: Mums reikia:" . ($smugiuSkaiciokle + $kiekNepataikeKartu) . "smugiu/smugis. Nepataike: $kiekNepataikeKartu.";
