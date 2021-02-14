@@ -220,3 +220,25 @@ echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.;"
 // $resultRound2 = round($resultTime2, 2);
 // echo '<br>';
 // echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.";
+
+//Desimta
+echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
+$vinisIlgis = 85; // 8.5 cm
+$smugis = rand(5, 20); //mm
+// 1cm = 10 mm
+$smugiuSkaiciokle = 0;
+for ($i = 1; $i <= 5; $i++) {
+    $smugioGilis = 0;
+    while ($smugioGilis <= 85) {
+        $rand = rand(5, 20);
+        if ($smugioGilis + $rand <= 85) {
+            $smugioGilis += $rand;
+            $smugiuSkaiciokle++;
+        } else {
+            break;
+        }
+        // echo $smugioGilis . '<br>';
+    }
+    echo '<br>';
+}
+echo "Mums reikia $smugiuSkaiciokle smugiu.";
