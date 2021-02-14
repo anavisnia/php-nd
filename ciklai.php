@@ -195,3 +195,28 @@ for ($i = 11; $i > 0; $i--) {
     echo "<br>";
 }
 echo "</pre>";
+
+//Devinta
+echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
+$c = "10 bezdzioniu \n suvalge 20 bananu.";
+$StartTime = microtime(true);
+for ($i = 0; $i <= 1; $i++) {
+    echo $c = "10 bezdzioniu \n suvalge 20 bananu.";
+}
+$EndTime = microtime(true);
+$resultTime = $EndTime - $StartTime;
+$resultRound = round($resultTime, 2);
+echo '<br>';
+echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.;";
+
+// antras
+// $c = "10 bezdzioniu \n suvalge 20 bananu.";
+// $StartTime2 = microtime(true);
+// for ($i = 0; $i <= 1000000; $i++) {
+//     echo $c = "10 bezdzioniu \n suvalge 20 bananu.";
+// }
+// $EndTime2 = microtime(true);
+// $resultTime2 = $EndTime2 - $StartTime2;
+// $resultRound2 = round($resultTime2, 2);
+// echo '<br>';
+// echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.";
