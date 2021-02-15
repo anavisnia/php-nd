@@ -279,4 +279,4 @@ for ($i = 1; $i <= 5; $i++) {
         }
     }
 }
-echo "<br>Dalis b: Mums reikia:" . ($smugiuSkaiciokle + $kiekNepataikeKartu) . "smugiu/smugis. Nepataike: $kiekNepataikeKartu.";
+echo "<br>Dalis b: Is viso smugiu:" . ($smugiuSkaiciokle + $kiekNepataikeKartu) . ". Nepataike: $kiekNepataikeKartu. Pataike: $smugiuSkaiciokle.";
