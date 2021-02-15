@@ -74,6 +74,9 @@ echo '<p>' . 'Dar ne iki galo' . '</p>';
 $string = '*';
 for ($i = 1; $i <= 25; $i++) {
     for ($j = 1; $j <= 25; $j++) {
+        // if ($j == $i || $j == 26 - $i) {
+        //     echo "<span style=\"font-size:10px;padding:4px;color:red;\">$string</span>";
+        // }
         echo "<span style=\"font-size:10px;padding:4px;\">$string</span>";
     }
     echo '<br>';
@@ -215,7 +218,7 @@ echo "Ispauzdinti '10 bezdzioniu suvalge 20 bananu', uztruko: $resultTime sec.;"
 // $c = "10 bezdzioniu \n suvalge 20 bananu.";
 // $StartTime2 = microtime(true);
 // for ($i = 0; $i <= 1000000; $i++) {
-//     echo $c = "10 bezdzioniu \n suvalge 20 bananu.";
+//     echo $c = '10 bezdzioniu \n suvalge 20 bananu.';
 // }
 // $EndTime2 = microtime(true);
 // $resultTime2 = $EndTime2 - $StartTime2;
@@ -230,9 +233,9 @@ Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand(
 a)
 “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
 */
-$vinisIlgis = 85; // 8.5 cm
+$vinisIlgis = 85; //mm -> 8.5 cm
 $smugis = rand(5, 20); //mm
-// 1cm = 10 mm
+
 $smugiuSkaiciokle = 0;
 for ($i = 1; $i <= 5; $i++) {
     $smugioGilis = 0;
