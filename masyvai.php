@@ -301,7 +301,7 @@ for ($i = 0; $i < 10; $i++) {
         $rand = rand(5, 25);
         array_push($uniqueNumArr, $rand);
     }
-    if ($i > 1 && $i < 10) {
+    if ($i > 1) {
         $sum = $uniqueNumArr[$i - 1] + $uniqueNumArr[$i - 2];
         array_push($uniqueNumArr, $sum);
     }
