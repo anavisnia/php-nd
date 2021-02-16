@@ -18,7 +18,7 @@ echo '</pre>';
 //Antra
 echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
 /*
-Suskaičiuokite kiek masyve yra elementų didesnių už 10
+A:Suskaičiuokite kiek masyve yra elementų didesnių už 10
 */
 
 $numCount = 0;
@@ -29,10 +29,10 @@ for ($i = 0, $j = 0; $i < count($multiArr); $i++, $j++) {
         }
     }
 }
-echo $numCount . '<br>';
+echo "A: Didesniu uz 10 yra: $numCount. <br>";
 
 /*
-Raskite didžiausio elemento reikšmę;
+B: Raskite didžiausio elemento reikšmę;
 */
 $didziausiasSk = 0;
 for ($i = 0; $i < count($multiArr); $i++) {
@@ -42,4 +42,14 @@ for ($i = 0; $i < count($multiArr); $i++) {
         }
     }
 }
-echo $didziausiasSk . '<br>';
+echo "B: Didziausiai skaicius: $didziausiasSk.  <br>";
+
+/*
+C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+*/
+//neveikai
+$sum = 0;
+for ($i = 0, $j = 0; $i < count($multiArr[$i]); $i++, $j++) {
+    $sum = $multiArr[$i][$j] + $multiArr[$i][$j] + $multiArr[$i][$j] + $multiArr[$i][$j] + $multiArr[$i][$j];
+    echo $sum . '<br>';
+}
