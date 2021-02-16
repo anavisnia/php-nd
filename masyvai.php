@@ -288,3 +288,10 @@ echo '</pre>';
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
+$keyValueArray = array_combine($numArr1, $numArr2);
+echo '<pre>';
+print_r($keyValueArray);
+echo '</pre>';
+
+//Desimta
+echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
