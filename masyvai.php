@@ -128,3 +128,31 @@ echo '</pre>';
 
 //Trecia
 echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
+$letterArr = [];
+$countA = 0;
+$countB = 0;
+$countC = 0;
+$countD = 0;
+for ($i  = 0; $i < 200; $i++) {
+    $rand = rand(1, 4);
+    if ($rand === 1) {
+        array_push($letterArr, 'A');
+        $countA++;
+    } elseif ($rand === 2) {
+        array_push($letterArr, 'B');
+        $countB++;
+    } elseif ($rand === 3) {
+        array_push($letterArr, 'C');
+        $countC++;
+    } else {
+        array_push($letterArr, 'D');
+        $countD++;
+    }
+}
+// echo '<pre>';
+// print_r($letterArr);
+// echo '</pre>';
+echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
+
+//Ketvirta
+echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
