@@ -156,3 +156,135 @@ echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br>
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
+asort($letterArr);
+// echo '<pre>';
+// print_r($letterArr);
+// echo '</pre>';
+
+//Penkta
+echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
+$letterArr1 = [];
+$letterArr2 = [];
+$letterArr3 = [];
+
+for ($i  = 0; $i < 200; $i++) {
+    $rand = rand(1, 4);
+    if ($rand === 1) {
+        array_push($letterArr1, 'A');
+    } elseif ($rand === 2) {
+        array_push($letterArr1, 'B');
+    } elseif ($rand === 3) {
+        array_push($letterArr1, 'C');
+    } else {
+        array_push($letterArr1, 'D');
+    }
+}
+for ($i  = 0; $i < 200; $i++) {
+    $rand = rand(1, 4);
+    if ($rand === 1) {
+        array_push($letterArr2, 'A');
+    } elseif ($rand === 2) {
+        array_push($letterArr2, 'B');
+    } elseif ($rand === 3) {
+        array_push($letterArr2, 'C');
+    } else {
+        array_push($letterArr2, 'D');
+    }
+}
+for ($i  = 0; $i < 200; $i++) {
+    $rand = rand(1, 4);
+    if ($rand === 1) {
+        array_push($letterArr3, 'A');
+    } elseif ($rand === 2) {
+        array_push($letterArr3, 'B');
+    } elseif ($rand === 3) {
+        array_push($letterArr3, 'C');
+    } else {
+        array_push($letterArr3, 'D');
+    }
+}
+
+$combinedLettersArr = [];
+for ($i = 0; $i < 200; $i++) {
+    $combo = $letterArr1[$i] . $letterArr2[$i] . $letterArr3[$i];
+    array_push($combinedLettersArr, $combo);
+}
+echo '<pre>';
+print_r($combinedLettersArr);
+echo '</pre>';
+
+$unikalusCombo = array_count_values($combinedLettersArr);
+foreach ($unikalusCombo as $key => $value) {
+    if ($value === 1) {
+        echo "Unikaslus yra: $key <br>";
+    }
+}
+
+//Sesta
+echo '<br>' . '<h3>' . 'Sesta Uzduotis' . '</h3>' . '<br>';
+$numArr1 = [];
+
+for ($i = 0; $i < 100; $i++) {
+    $randNum = rand(100, 999);
+    if (in_array($randNum, $numArr1)) {
+        $randNum = rand(100, 999);
+    }
+    if (!in_array($randNum, $numArr1)) {
+        array_push($numArr1, $randNum);
+    } else {
+        $randNum = rand(100, 999);
+        array_push($numArr1, $randNum);
+    }
+}
+// echo '<pre>';
+// print_r($numArr1);
+// print_r(array_count_values($numArr1));
+// echo '</pre>';
+$numArr2 = [];
+for ($i = 0; $i < 100; $i++) {
+    $randNum = rand(100, 999);
+    if (in_array($randNum, $numArr2)) {
+        $randNum = rand(100, 999);
+    }
+    if (!in_array($randNum, $numArr2)) {
+        array_push($numArr2, $randNum);
+    } else {
+        $randNum = rand(100, 999);
+        array_push($numArr2, $randNum);
+    }
+}
+// echo '<pre>';
+// print_r($numArr2);
+// print_r(array_count_values($numArr2));
+// echo '</pre>';
+
+//Septinta
+echo '<br>' . '<h3>' . 'Septinta Uzduotis' . '</h3>' . '<br>';
+$arrayWithNotRepeatedNum = [];
+for ($i = 0; $i < count($numArr1); $i++) {
+    if (in_array($numArr1[$i], $numArr2)) {
+        continue;
+    } else {
+        array_push($arrayWithNotRepeatedNum, $numArr1[$i]);
+    }
+}
+echo '<pre>';
+print_r($arrayWithNotRepeatedNum);
+echo '</pre>';
+
+//Astunta
+echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
+$arrayWithRepeatedNum = [];
+for ($i = 0; $i < count($numArr1); $i++) {
+    if (in_array($numArr1[$i], $numArr2)) {
+        array_push($arrayWithRepeatedNum, $numArr1[$i]);
+    } else {
+        continue;
+    }
+}
+echo '<pre>';
+print_r($arrayWithRepeatedNum);
+echo '</pre>';
+
+//Devinta
+echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
