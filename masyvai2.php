@@ -29,4 +29,17 @@ for ($i = 0, $j = 0; $i < count($multiArr); $i++, $j++) {
         }
     }
 }
-echo $numCount;
+echo $numCount . '<br>';
+
+/*
+Raskite didžiausio elemento reikšmę;
+*/
+$didziausiasSk = 0;
+for ($i = 0; $i < count($multiArr); $i++) {
+    for ($j = 0; $j < count($multiArr[$i]); $j++) {
+        if ($didziausiasSk < $multiArr[$i][$j]) {
+            $didziausiasSk = $multiArr[$i][$j];
+        }
+    }
+}
+echo $didziausiasSk . '<br>';
