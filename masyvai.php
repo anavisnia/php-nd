@@ -101,6 +101,7 @@ echo 'Dalis h:' . '<br>';
 //         break;
 //     }
 // }
+
 echo '<pre>';
 print_r($newArr);
 echo '</pre>';
@@ -152,7 +153,7 @@ for ($i  = 0; $i < 200; $i++) {
 // echo '<pre>';
 // print_r($letterArr);
 // echo '</pre>';
-echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
+// echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
@@ -209,9 +210,9 @@ for ($i = 0; $i < 200; $i++) {
     $combo = $letterArr1[$i] . $letterArr2[$i] . $letterArr3[$i];
     array_push($combinedLettersArr, $combo);
 }
-echo '<pre>';
-print_r($combinedLettersArr);
-echo '</pre>';
+// echo '<pre>';
+// print_r($combinedLettersArr);
+// echo '</pre>';
 
 $unikalusCombo = array_count_values($combinedLettersArr);
 foreach ($unikalusCombo as $key => $value) {
@@ -268,9 +269,9 @@ for ($i = 0; $i < count($numArr1); $i++) {
         array_push($arrayWithNotRepeatedNum, $numArr1[$i]);
     }
 }
-echo '<pre>';
-print_r($arrayWithNotRepeatedNum);
-echo '</pre>';
+// echo '<pre>';
+// print_r($arrayWithNotRepeatedNum);
+// echo '</pre>';
 
 //Astunta
 echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
@@ -282,16 +283,16 @@ for ($i = 0; $i < count($numArr1); $i++) {
         continue;
     }
 }
-echo '<pre>';
-print_r($arrayWithRepeatedNum);
-echo '</pre>';
+// echo '<pre>';
+// print_r($arrayWithRepeatedNum);
+// echo '</pre>';
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
 $keyValueArray = array_combine($numArr1, $numArr2);
-echo '<pre>';
-print_r($keyValueArray);
-echo '</pre>';
+// echo '<pre>';
+// print_r($keyValueArray);
+// echo '</pre>';
 
 //Desimta
 echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
@@ -306,6 +307,6 @@ for ($i = 0; $i < 10; $i++) {
         array_push($uniqueNumArr, $sum);
     }
 }
-echo '<pre>';
-print_r($uniqueNumArr);
-echo '</pre>';
+// echo '<pre>';
+// print_r($uniqueNumArr);
+// echo '</pre>';
