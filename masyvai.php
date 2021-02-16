@@ -295,3 +295,17 @@ echo '</pre>';
 
 //Desimta
 echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
+$uniqueNumArr = [];
+for ($i = 0; $i < 10; $i++) {
+    if ($i <= 1) {
+        $rand = rand(5, 25);
+        array_push($uniqueNumArr, $rand);
+    }
+    if ($i > 1 && $i < 10) {
+        $sum = $uniqueNumArr[$i - 1] + $uniqueNumArr[$i - 2];
+        array_push($uniqueNumArr, $sum);
+    }
+}
+echo '<pre>';
+print_r($uniqueNumArr);
+echo '</pre>';
