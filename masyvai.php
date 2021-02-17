@@ -4,22 +4,27 @@ echo '<h3>' . 'Masyvai' . '</h3>' . '<br>';
 //pirma
 echo '<br>' . '<h3>' . 'Pirma Uzduotis' . '</h3>' . '<br>';
 $array = [];
-for ($i = 0; $i <= 29; $i++) {
-    $rand = rand(5, 25);
-    array_push($array, $rand);
+// for ($i = 0; $i <= 29; $i++) {
+//     $rand = rand(5, 25);
+//     array_push($array, $rand);
+// }
+foreach(range(0, 29) as $value) {
+    $array[$value] = rand(5, 25);
 }
-// echo '<pre>';
-// print_r($array);
-// echo '</pre>';
-_d($array);
+_pr($array);
 
 //Antra
 echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
 // **********************************************************
 echo 'Dalis a:' . '<br>';
 $numCount = 0;
-for ($i = 0; $i < count($array); $i++) {
-    if ($array[$i] > 10) {
+// for ($i = 0; $i < count($array); $i++) {
+//     if ($array[$i] > 10) {
+//         $numCount++;
+//     }
+// }
+foreach($array as $value) {
+    if ($value > 10) {
         $numCount++;
     }
 }
@@ -27,22 +32,35 @@ echo "Masyve yra $numCount skaiciu/skaiciai, kurie yra diaugiau 10. <br>";
 
 // **********************************************************
 echo 'Dalis b:' . '<br>';
-$didziausiasSk = 0;
-$maziausiasSk = 0;
-for ($i = 0; $i < count($array); $i++) {
-    if ($didziausiasSk > $array[$i]) {
-        $maziausiasSk = $array[$i];
+// $didziausiasSk = 0;
+// $maziausiasSk = 0;
+// for ($i = 0; $i < count($array); $i++) {
+//     if ($didziausiasSk > $array[$i]) {
+//         $maziausiasSk = $array[$i];
+//     } else {
+//         $didziausiasSk = $array[$i];
+//     }
+// }
+$didziausiasSk1 = 0;
+$maziausiasSk1 = 0;
+foreach($array as $value) {
+    if ($didziausiasSk1 > $value) {
+        $maziausiasSk1 = $value;
     } else {
-        $didziausiasSk = $array[$i];
+        $didziausiasSk1 = $value;
     }
 }
-echo "Didziausias skaicius: $didziausiasSk. <br>";
+// echo "Didziausias skaicius: $didziausiasSk. <br>";
+echo "Didziausias skaicius: $didziausiasSk1. <br>";
 
 // **********************************************************
 echo 'Dalis c:' . '<br>';
 $sum = 0;
-for ($i = 0; $i < count($array); $i++) {
-    $sum += $array[$i];
+// for ($i = 0; $i < count($array); $i++) {
+//     $sum += $array[$i];
+// }
+foreach($array as $value) {
+    $sum += $value;
 }
 echo "Suma visu skaiciu: $sum. <br>";
 
@@ -53,71 +71,66 @@ foreach ($array as $key => $value) {
     $number = $value - $key;
     array_push($newArr, $number);
 }
-
-echo '<pre>';
-print_r($newArr);
-echo '</pre>';
+_pr($newArr);
 
 // **********************************************************
 echo '<br>' . 'Dalis e:' . '<br>';
-for ($i = 0; $i <= 9; $i++) {
-    $rand = rand(5, 25);
-    array_push($newArr, $rand);
+// for ($i = 0; $i <= 9; $i++) {
+//     $rand = rand(5, 25);
+//     array_push($newArr, $rand);
+// }
+foreach(range(30, 39) as $value) {
+    $newArr[$value] = rand(5, 25);
 }
-
-echo '<pre>';
-print_r($newArr);
-echo '</pre>';
+_pr($newArr);
 
 // **********************************************************
 echo 'Dalis f:' . '<br>';
+// $pairdArr1 = [];
+// $unpairedArr1 = [];
+// for ($i = 0; $i < count($newArr); $i++) {
+//     if ($i % 2) {
+//         array_push($unpairedArr1, $newArr[$i]);
+//     } else {
+//         array_push($pairdArr1, $newArr[$i]);
+//     }
+// }
 $pairdArr = [];
 $unpairedArr = [];
-for ($i = 0; $i < count($newArr); $i++) {
-    if ($i % 2) {
-        array_push($unpairedArr, $newArr[$i]);
+foreach($newArr as $key => $value) {
+    if (($key % 2) === 1) {
+        $unpairedArr[$key] = $value;
     } else {
-        array_push($pairdArr, $newArr[$i]);
+        $pairdArr[$key] = $value;
     }
 }
-
-echo '<pre>';
 echo 'Poriniai:';
-print_r($pairdArr);
+_pr($pairdArr);
 echo 'Neporiniai:';
-print_r($unpairedArr);
-echo '</pre>';
+_pr($unpairedArr);
+
 
 // **********************************************************
 echo '<br>' . 'Dalis g:' . '<br>';
+_pr($newArr);
 foreach ($newArr as $index => $value) {
-    if ($index % 2 == 0 & $value > 15) {
+    if (($index % 2) === 0 && $value > 15) {
         $newArr[$index] = 0;
     }
 }
 
-echo '<pre>';
-echo 'Didesni uz 15 skaiciai tapo:';
-print_r($newArr);
-echo '</pre>';
+echo 'Didesni uz 15 skaiciai tapo nuliu:';
+_pr($newArr);
+
 
 // **********************************************************
 echo 'Dalis h:' . '<br>';
-// $elemKey = 0;
-// for ($i = 0; $i < count($pairdArr); $i++) {
-//     if ($pairdArr[$i] > 10) {
-//         $elemKey = $i;
-//         break;
-//     }
-// }
 
-echo '<pre>';
-print_r($newArr);
-echo '</pre>';
+_pr($newArr);
 $elemKey = 0;
-for ($i = 0; $i < count($newArr); $i++) {
-    if ($newArr[$i] > 10) {
-        $elemKey = $i;
+foreach($newArr as $key => $value) {
+    if ($value > 10) {
+        $elemKey = $key;
         break;
     }
 }
@@ -125,17 +138,20 @@ echo "Pirmasis indeksas reiksmes, kuri yra didesne uz 10: $elemKey.";
 
 // **********************************************************
 echo '<br>' . 'Dalis i:' . '<br>';
-for ($i = 0; $i < count($newArr); $i++) {
-    if ($i % 2) {
-        continue;
-    } else {
-        unset($newArr[$i]);
+// for ($i = 0; $i < count($newArr); $i++) {
+//     if ($i % 2) {
+//         continue;
+//     } else {
+//         unset($newArr[$i]);
+//     }
+// }
+foreach($newArr as $key => $value) {
+    if (($key % 2) === 0) {
+        unset($newArr[$key]);
     }
 }
 echo 'Istrinem visus porinius indeksus:';
-echo '<pre>';
-print_r($newArr);
-echo '</pre>';
+_pr($newArr);
 
 //Trecia
 echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
@@ -144,33 +160,45 @@ $countA = 0;
 $countB = 0;
 $countC = 0;
 $countD = 0;
-for ($i  = 0; $i < 200; $i++) {
+// for ($i  = 0; $i < 200; $i++) {
+//     $rand = rand(1, 4);
+//     if ($rand === 1) {
+//         array_push($letterArr, 'A');
+//         $countA++;
+//     } elseif ($rand === 2) {
+//         array_push($letterArr, 'B');
+//         $countB++;
+//     } elseif ($rand === 3) {
+//         array_push($letterArr, 'C');
+//         $countC++;
+//     } else {
+//         array_push($letterArr, 'D');
+//         $countD++;
+//     }
+// }
+foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
-        array_push($letterArr, 'A');
+        $letterArr[$value] = 'A';
         $countA++;
     } elseif ($rand === 2) {
-        array_push($letterArr, 'B');
+        $letterArr[$value] = 'B';
         $countB++;
     } elseif ($rand === 3) {
-        array_push($letterArr, 'C');
+        $letterArr[$value] = 'C';
         $countC++;
     } else {
-        array_push($letterArr, 'D');
+        $letterArr[$value] = 'D';
         $countD++;
     }
 }
-// echo '<pre>';
-// print_r($letterArr);
-// echo '</pre>';
+// _pr($letterArr);
 // echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
 asort($letterArr);
-// echo '<pre>';
-// print_r($letterArr);
-// echo '</pre>';
+// _pr($letterArr);
 
 //Penkta
 echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
@@ -178,51 +206,61 @@ $letterArr1 = [];
 $letterArr2 = [];
 $letterArr3 = [];
 
-for ($i  = 0; $i < 200; $i++) {
+foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
-        array_push($letterArr1, 'A');
+        $letterArr1[$value] = 'A';
+        $countA++;
     } elseif ($rand === 2) {
-        array_push($letterArr1, 'B');
+        $letterArr1[$value] = 'B';
+        $countB++;
     } elseif ($rand === 3) {
-        array_push($letterArr1, 'C');
+        $letterArr1[$value] = 'C';
+        $countC++;
     } else {
-        array_push($letterArr1, 'D');
+        $letterArr1[$value] = 'D';
+        $countD++;
     }
 }
-for ($i  = 0; $i < 200; $i++) {
+foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
-        array_push($letterArr2, 'A');
+        $letterArr2[$value] = 'A';
+        $countA++;
     } elseif ($rand === 2) {
-        array_push($letterArr2, 'B');
+        $letterArr2[$value] = 'B';
+        $countB++;
     } elseif ($rand === 3) {
-        array_push($letterArr2, 'C');
+        $letterArr2[$value] = 'C';
+        $countC++;
     } else {
-        array_push($letterArr2, 'D');
+        $letterArr2[$value] = 'D';
+        $countD++;
     }
 }
-for ($i  = 0; $i < 200; $i++) {
+foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
-        array_push($letterArr3, 'A');
+        $letterArr3[$value] = 'A';
+        $countA++;
     } elseif ($rand === 2) {
-        array_push($letterArr3, 'B');
+        $letterArr3[$value] = 'B';
+        $countB++;
     } elseif ($rand === 3) {
-        array_push($letterArr3, 'C');
+        $letterArr3[$value] = 'C';
+        $countC++;
     } else {
-        array_push($letterArr3, 'D');
+        $letterArr3[$value] = 'D';
+        $countD++;
     }
 }
 
 $combinedLettersArr = [];
-for ($i = 0; $i < 200; $i++) {
-    $combo = $letterArr1[$i] . $letterArr2[$i] . $letterArr3[$i];
-    array_push($combinedLettersArr, $combo);
+foreach(range(0, 199) as $value) {
+    $combo = $letterArr1[$value] . $letterArr2[$value] . $letterArr3[$value];
+    $combinedLettersArr[$value] = $combo;
 }
-// echo '<pre>';
-// print_r($combinedLettersArr);
-// echo '</pre>';
+_pr($combinedLettersArr);
 
 $unikalusCombo = array_count_values($combinedLettersArr);
 foreach ($unikalusCombo as $key => $value) {
@@ -265,44 +303,42 @@ for ($i = 0; $i < 100; $i++) {
     }
 }
 // echo '<pre>';
-// print_r($numArr2);
+// _pr($numArr2);
 // print_r(array_count_values($numArr2));
 // echo '</pre>';
 
 //Septinta
 echo '<br>' . '<h3>' . 'Septinta Uzduotis' . '</h3>' . '<br>';
 $arrayWithNotRepeatedNum = [];
-for ($i = 0; $i < count($numArr1); $i++) {
-    if (in_array($numArr1[$i], $numArr2)) {
+
+foreach($numArr1 as $key => $value) {
+    if (in_array($value, $numArr2)) {
         continue;
     } else {
-        array_push($arrayWithNotRepeatedNum, $numArr1[$i]);
+        $arrayWithNotRepeatedNum[$key] = $value;
     }
 }
-// echo '<pre>';
-// print_r($arrayWithNotRepeatedNum);
-// echo '</pre>';
+_pr($arrayWithNotRepeatedNum);
 
 //Astunta
 echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
 $arrayWithRepeatedNum = [];
-for ($i = 0; $i < count($numArr1); $i++) {
-    if (in_array($numArr1[$i], $numArr2)) {
-        array_push($arrayWithRepeatedNum, $numArr1[$i]);
+
+foreach($arrayWithRepeatedNum as $key => $value) {
+    if (in_array($value, $numArr2)) {
+        $arrayWithRepeatedNum[$key] = $value;
     } else {
         continue;
     }
 }
-// echo '<pre>';
-// print_r($arrayWithRepeatedNum);
-// echo '</pre>';
+_pr($arrayWithRepeatedNum);
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
 $keyValueArray = array_combine($numArr1, $numArr2);
-// echo '<pre>';
-// print_r($keyValueArray);
-// echo '</pre>';
+
+// _pr($keyValueArray);
+
 
 //Desimta
 echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
