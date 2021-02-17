@@ -14,6 +14,7 @@ echo '</pre>';
 
 //Antra
 echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
+// **********************************************************
 echo 'Dalis a:' . '<br>';
 $numCount = 0;
 for ($i = 0; $i < count($array); $i++) {
@@ -23,6 +24,7 @@ for ($i = 0; $i < count($array); $i++) {
 }
 echo "Masyve yra $numCount skaiciu/skaiciai, kurie yra diaugiau 10. <br>";
 
+// **********************************************************
 echo 'Dalis b:' . '<br>';
 $didziausiasSk = 0;
 $maziausiasSk = 0;
@@ -35,6 +37,7 @@ for ($i = 0; $i < count($array); $i++) {
 }
 echo "Didziausias skaicius: $didziausiasSk. <br>";
 
+// **********************************************************
 echo 'Dalis c:' . '<br>';
 $sum = 0;
 for ($i = 0; $i < count($array); $i++) {
@@ -42,6 +45,7 @@ for ($i = 0; $i < count($array); $i++) {
 }
 echo "Suma visu skaiciu: $sum. <br>";
 
+// **********************************************************
 echo 'Dalis d:' . '<br>';
 $newArr = [];
 foreach ($array as $key => $value) {
@@ -53,6 +57,7 @@ echo '<pre>';
 print_r($newArr);
 echo '</pre>';
 
+// **********************************************************
 echo '<br>' . 'Dalis e:' . '<br>';
 for ($i = 0; $i <= 9; $i++) {
     $rand = rand(5, 25);
@@ -63,6 +68,7 @@ echo '<pre>';
 print_r($newArr);
 echo '</pre>';
 
+// **********************************************************
 echo 'Dalis f:' . '<br>';
 $pairdArr = [];
 $unpairedArr = [];
@@ -81,6 +87,7 @@ echo 'Neporiniai:';
 print_r($unpairedArr);
 echo '</pre>';
 
+// **********************************************************
 echo 'Dalis g:' . '<br>';
 for ($i = 0; $i < count($pairdArr); $i++) {
     if ($pairdArr[$i] > 15) {
@@ -93,6 +100,7 @@ echo 'Didesni uz 15 skaiciai tapo 0:';
 print_r($pairdArr);
 echo '</pre>';
 
+// **********************************************************
 echo 'Dalis h:' . '<br>';
 // $elemKey = 0;
 // for ($i = 0; $i < count($pairdArr); $i++) {
@@ -114,6 +122,7 @@ for ($i = 0; $i < count($newArr); $i++) {
 }
 echo "Pirmasis indeksas reiksmes, kuri yra didesne uz 10: $elemKey.";
 
+// **********************************************************
 echo '<br>' . 'Dalis i:' . '<br>';
 for ($i = 0; $i < count($newArr); $i++) {
     if ($i % 2) {
