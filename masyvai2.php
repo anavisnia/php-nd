@@ -61,7 +61,7 @@ C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t
 */
 //neveikai
 $sum = 0;
-for ($i = 0, $j = 0; $i < count($multidArr[$i]); $i++, $j++) {
-    $sum = $multidArr[$i][$j] + $multidArr[$i][$j] + $multidArr[$i][$j] + $multidArr[$i][$j] + $multidArr[$i][$j];
-    echo $sum . '<br>';
-}
+// for ($i = 0, $j = 0; $j < count($multidArr[$i]); $i++, $j++) {
+//     $sum = $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j];
+//     echo $sum . '<br>';
+// }
