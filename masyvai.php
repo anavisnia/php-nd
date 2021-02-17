@@ -88,16 +88,16 @@ print_r($unpairedArr);
 echo '</pre>';
 
 // **********************************************************
-echo 'Dalis g:' . '<br>';
-for ($i = 0; $i < count($pairdArr); $i++) {
-    if ($pairdArr[$i] > 15) {
-        $pairdArr[$i] = 0;
+echo '<br>' . 'Dalis g:' . '<br>';
+foreach ($newArr as $index => $value) {
+    if ($index % 2 == 0 & $value > 15) {
+        $newArr[$index] = 0;
     }
 }
 
 echo '<pre>';
-echo 'Didesni uz 15 skaiciai tapo 0:';
-print_r($pairdArr);
+echo 'Didesni uz 15 skaiciai tapo:';
+print_r($newArr);
 echo '</pre>';
 
 // **********************************************************
