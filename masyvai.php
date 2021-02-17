@@ -8,9 +8,10 @@ for ($i = 0; $i <= 29; $i++) {
     $rand = rand(5, 25);
     array_push($array, $rand);
 }
-echo '<pre>';
-print_r($array);
-echo '</pre>';
+// echo '<pre>';
+// print_r($array);
+// echo '</pre>';
+_d($array);
 
 //Antra
 echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
