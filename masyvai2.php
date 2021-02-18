@@ -87,13 +87,19 @@ _pr($sumosMasyvas);
 //Trecia
 echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
 $masyvas3 = [];
-$rand = rand(2, 10);
-// foreach (range(1, 10) as $key => $value) {
-//     foreach (range(rand(2, 10), rand(2, 20)) as $key => $value)) {
-//         $masyvas3[][]
-//     }
-// }
+foreach(range(0, 9) as $indeks => $_) {
+    foreach(range(rand(0, 2), rand(2, 20)) as $indeks2 => $_) {
+        $masyvas3[$indeks][$indeks2] = chr(rand(65, 90)); // upper case random letter from A-Z
+    }
+}
+_pr($masyvas3);
 
+//NEVEIKIA
+
+// foreach($masyvas3 as $vidMasyvas) {
+//     sort($vidMasyvas);
+// }
+// _pr($masyvas3);
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
 
