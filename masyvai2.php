@@ -51,7 +51,7 @@ echo "B: Didziausiai skaicius: $didziausiasSk.  <br>";
 /* *************************
 C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
 */
-echo "Antra C neveikai <br>";
+echo "Antra C nesigavo <br>";
 $sum = 0;
 // foreach($multidArr as $key => $value) {
 
@@ -66,6 +66,23 @@ foreach ($multidArr as $key => $_) {
     }
 }
 _pr($multidArr);
+
+/* *************************
+E: Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai 
+ir sumas panaudokite kaip reikšmes sukuriant naują masyvą. 
+T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, 
+turinčio indeksą 0 dideliame masyve, visų elementų sumai 
+*/
+$arrayAntrasD = [];
+$sumosMasyvas = [];
+foreach ($multidArr as $antrasMasyvas) {
+    $suma = 0;
+    foreach ($antrasMasyvas as $num) {
+        $suma += $num;
+    }
+    $sumosMasyvas[] = $suma;
+}
+_pr($sumosMasyvas);
 
 //Trecia
 echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
