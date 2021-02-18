@@ -192,13 +192,13 @@ foreach(range(0, 199) as $value) {
         $countD++;
     }
 }
-// _pr($letterArr);
-// echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
+_pr($letterArr);
+echo "Raidziu A: $countA; <br> Raidziu B: $countB; <br> Raidziu C: $countC; <br> Raidziu D: $countD;";
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
 asort($letterArr);
-// _pr($letterArr);
+_pr($letterArr);
 
 //Penkta
 echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
@@ -210,48 +210,36 @@ foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
         $letterArr1[$value] = 'A';
-        $countA++;
     } elseif ($rand === 2) {
         $letterArr1[$value] = 'B';
-        $countB++;
     } elseif ($rand === 3) {
         $letterArr1[$value] = 'C';
-        $countC++;
     } else {
         $letterArr1[$value] = 'D';
-        $countD++;
     }
 }
 foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
         $letterArr2[$value] = 'A';
-        $countA++;
     } elseif ($rand === 2) {
         $letterArr2[$value] = 'B';
-        $countB++;
     } elseif ($rand === 3) {
         $letterArr2[$value] = 'C';
-        $countC++;
     } else {
         $letterArr2[$value] = 'D';
-        $countD++;
     }
 }
 foreach(range(0, 199) as $value) {
     $rand = rand(1, 4);
     if ($rand === 1) {
         $letterArr3[$value] = 'A';
-        $countA++;
     } elseif ($rand === 2) {
         $letterArr3[$value] = 'B';
-        $countB++;
     } elseif ($rand === 3) {
         $letterArr3[$value] = 'C';
-        $countC++;
     } else {
         $letterArr3[$value] = 'D';
-        $countD++;
     }
 }
 
@@ -318,26 +306,26 @@ foreach($numArr1 as $key => $value) {
         $arrayWithNotRepeatedNum[$key] = $value;
     }
 }
-_pr($arrayWithNotRepeatedNum);
+// _pr($arrayWithNotRepeatedNum);
 
 //Astunta
 echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
 $arrayWithRepeatedNum = [];
 
-foreach($arrayWithRepeatedNum as $key => $value) {
+foreach($arrayWithNotRepeatedNum as $key => $value) {
     if (in_array($value, $numArr2)) {
         $arrayWithRepeatedNum[$key] = $value;
     } else {
         continue;
     }
 }
-_pr($arrayWithRepeatedNum);
+// _pr($arrayWithRepeatedNum);
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
 $keyValueArray = array_combine($numArr1, $numArr2);
 
-// _pr($keyValueArray);
+_pr($keyValueArray);
 
 
 //Desimta
@@ -354,5 +342,5 @@ for ($i = 0; $i < 10; $i++) {
     }
 }
 // echo '<pre>';
-// print_r($uniqueNumArr);
+_pr($uniqueNumArr);
 // echo '</pre>';

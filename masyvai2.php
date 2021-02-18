@@ -65,3 +65,20 @@ $sum = 0;
 //     $sum = $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j] + $multidArr[0][$j];
 //     echo $sum . '<br>';
 // }
+
+
+//Trecia
+echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
+$masyvas3 = [];
+$rand = rand(2, 10);
+// foreach (range(1, 10) as $key => $value) {
+//     foreach (range(rand(2, 10), rand(2, 20)) as $key => $value)) {
+//         $masyvas3[][]
+//     }
+// }
+
+//Ketvirta
+echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
+
+//Penkta
+echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
