@@ -124,8 +124,24 @@ for($i = 0; $i < 30; $i++) {
 }
 _pr($masyvas5); //egzistuoja/veikia
  
-// foreach($masyvas5 as $vidMasyvas) {
-//     foreach ($vidMasyvas as $key => $value) {
-//         $key = ''
-//     }   
-// }
+//Sesta
+echo '<br>' . '<h3>' . 'Sesta Uzduotis' . '</h3>' . '<br>';
+// isrusioti pagal user_id didejancia tvarka
+echo "Isrusiota pagal user_id did. tvarka:";
+function compareId($id1, $id2)
+{
+    return $id1 <=> $id2;
+}
+
+usort($masyvas5, 'compareId');
+_pr($masyvas5);
+
+// isrusioti pagal place_in_row mazejancia tvarka
+echo "Isrusiota pagal place_in_row maz. tvarka:";
+function comparePlace($place1, $place2)
+{
+    return $place2['place_in_row'] - $place1['place_in_row'];
+}
+
+usort($masyvas5, 'comparePlace');
+_pr($masyvas5);
