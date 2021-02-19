@@ -109,3 +109,23 @@ _pr($masyvas3);
 
 //Penkta
 echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
+$masyvas5 = [];
+for($i = 0; $i < 30; $i++) {
+    $randId = rand(1, 1000000);
+    $randPlace = rand(0, 100);
+    if (!in_array($randId, $masyvas5)) {
+        $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
+    } else {
+        $randId = rand(1, 1000000);
+        if (!in_array($randId, $masyvas5)) {
+            $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
+        }
+    }
+}
+_pr($masyvas5); //egzistuoja/veikia
+ 
+// foreach($masyvas5 as $vidMasyvas) {
+//     foreach ($vidMasyvas as $key => $value) {
+//         $key = ''
+//     }   
+// }
