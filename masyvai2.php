@@ -103,12 +103,9 @@ _pr($masyvas3);
 
 //Ketvirta
 echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
-// foreach($masyvas3 as $key => $value) {
-//     $kiekElementu = 0;
-//     if ($masyvas3[$key] < count($value)) {
-//         $masyvas3[$key] = $value;
-//     }
-// }
-// _pr($masyvas3);
+
+sort($masyvas3);
+_pr($masyvas3);
+
 //Penkta
 echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
