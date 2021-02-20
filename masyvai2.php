@@ -51,12 +51,14 @@ echo "B: Didziausiai skaicius: $didziausiasSk.  <br>";
 /* *************************
 C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
 */
-echo "Antra C nesigavo <br>";
-$sum = 0;
-// foreach($multidArr as $key => $value) {
+$sumosMasyvas = $multidArr;
 
-// }
-
+foreach ($masyavs2 as $key => $value)   {
+    foreach($value as $key2 => $value2) {
+        $value[$key2] += $value2;
+    }
+ }
+ _pr($sumosMasyvas);
 /* *************************
 D: Visus masyvus “pailginkite” iki 7 elementų
 */
@@ -195,3 +197,17 @@ _pr($masyvas8);
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
+$masyvas9 = $masyvas8;
+$suma = 0;
+
+usort($masyvas9, function ($a, $b) {
+    if (is_array($a)) {
+        $a = array_sum($a);
+    }
+    if (is_array($b)) {
+        $b = array_sum($b);
+    }
+    return $a <=> $b;
+});
+_pr($suma);
+_pr($masyvas9);
