@@ -53,7 +53,7 @@ C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t
 */
 $sumosMasyvas = $multidArr;
 
-foreach ($masyavs2 as $key => $value)   {
+foreach ($sumosMasyvas as $key => $value)   {
     foreach($value as $key2 => $value2) {
         $value[$key2] += $value2;
     }
