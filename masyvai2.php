@@ -173,10 +173,9 @@ $masyvas8 = [];
 for ($i = 0; $i < 10; $i++) {
     $masyvas8[$i] = [];
 }
-_pr($masyvas8);
 
 //vidiniai masyvai turi buti nuo 0 iki 5 ilgio
-// jeigu iskrenta 0 - masuvo reiksmes turi buti nuo 0 iki 10 (is eiles)
+// jeigu iskrenta 0 - vidinio masuvo nekuriam, reiksmes turi buti nuo 0 iki 10 (is eiles)
 // jeigu iskrenta 1-5 masyvas turi buti tokio random skaiciaus ilgio ir
 // jo reiksmes turi buti atsitiktiniai skaicia nuo 0 iki 10 (gali kartotis)
 
@@ -185,6 +184,7 @@ for($i = 0; $i < count($masyvas8); $i++) {
     if ($kiekVidElementu === 0) {
         for ($j = 0; $j < 10; $j++) {
             $masyvas8[$i][$j] = $j;
+            // pakeisti
         }
     } else {
         for ($a = 0; $a < $kiekVidElementu; $a++) {
@@ -193,3 +193,6 @@ for($i = 0; $i < count($masyvas8); $i++) {
     }
 }
 _pr($masyvas8);
+
+//Devinta
+echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
