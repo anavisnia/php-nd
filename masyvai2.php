@@ -197,9 +197,19 @@ _pr($masyvas8);
 
 //Devinta
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
+// DEVINTA NEVEIKIA 
 $masyvas9 = $masyvas8;
-$suma = 0;
-
+// foreach ($masyvas9 as $key => $value)   {
+//     foreach($value as $key2 => $value2) {
+//         // if (gettype($value) === 'integer') {
+//         //     continue;
+//         // } else {
+//         //     $value[$key2] += $value2;
+//         // }
+//         // echo gettype($value);
+//     }
+//  }
+ _pr($masyvas9);
 usort($masyvas9, function ($a, $b) {
     if (is_array($a)) {
         $a = array_sum($a);
@@ -209,5 +219,4 @@ usort($masyvas9, function ($a, $b) {
     }
     return $a <=> $b;
 });
-_pr($suma);
 _pr($masyvas9);
