@@ -175,7 +175,7 @@ for ($i = 0; $i < 10; $i++) {
 }
 
 //vidiniai masyvai turi buti nuo 0 iki 5 ilgio
-// jeigu iskrenta 0 - vidinio masuvo nekuriam, reiksmes turi buti nuo 0 iki 10 (is eiles)
+// jeigu iskrenta 0 - vidinio masuvo nekuriam, reiksme turi buti nuo 0 iki 10 (rand(0, 10))
 // jeigu iskrenta 1-5 masyvas turi buti tokio random skaiciaus ilgio ir
 // jo reiksmes turi buti atsitiktiniai skaicia nuo 0 iki 10 (gali kartotis)
 
@@ -183,8 +183,7 @@ for($i = 0; $i < count($masyvas8); $i++) {
     $kiekVidElementu = rand(0, 5);
     if ($kiekVidElementu === 0) {
         for ($j = 0; $j < 10; $j++) {
-            $masyvas8[$i][$j] = $j;
-            // pakeisti
+            $masyvas8[$i] = rand(0, 10);
         }
     } else {
         for ($a = 0; $a < $kiekVidElementu; $a++) {
