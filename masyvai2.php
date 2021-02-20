@@ -145,3 +145,27 @@ function comparePlace($place1, $place2)
 
 usort($masyvas5, 'comparePlace');
 _pr($masyvas5);
+
+//Septinta
+echo '<br>' . '<h3>' . 'Septinta Uzduotis' . '</h3>' . '<br>';
+$masyvas7 = $masyvas5;
+$letterArr = range('a', 'z');
+_pr($letterArr);
+$letterString = implode($letterArr);
+_pr($letterString);
+for($i = 0; $i < count($masyvas7); $i++) {
+    $randName = '';
+    $randSurname = '';
+    $howMamySymbN = rand(5, 15);
+    $howMamySymbS = rand(5, 15);
+    while (strlen($randName) <= $howMamySymbN) {
+        $randName .= chr(rand(97, 122));
+    }
+    while (strlen($randSurname) <= $howMamySymbS) {
+        $randSurname .= chr(rand(97, 122));
+    }
+    $masyvas7[$i]['name'] = $randName;
+    $masyvas7[$i]['surname'] = $randSurname;
+    
+}
+_pr($masyvas7);
