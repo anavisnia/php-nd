@@ -149,10 +149,6 @@ _pr($masyvas5);
 //Septinta
 echo '<br>' . '<h3>' . 'Septinta Uzduotis' . '</h3>' . '<br>';
 $masyvas7 = $masyvas5;
-$letterArr = range('a', 'z');
-_pr($letterArr);
-$letterString = implode($letterArr);
-_pr($letterString);
 for($i = 0; $i < count($masyvas7); $i++) {
     $randName = '';
     $randSurname = '';
@@ -169,3 +165,31 @@ for($i = 0; $i < count($masyvas7); $i++) {
     
 }
 _pr($masyvas7);
+
+//Astunta
+echo '<br>' . '<h3>' . 'Astunta Uzduotis' . '</h3>' . '<br>';
+//sukuriam masyva is 10 elementu (kurie yra tusti masyvai)
+$masyvas8 = [];
+for ($i = 0; $i < 10; $i++) {
+    $masyvas8[$i] = [];
+}
+_pr($masyvas8);
+
+//vidiniai masyvai turi buti nuo 0 iki 5 ilgio
+// jeigu iskrenta 0 - masuvo reiksmes turi buti nuo 0 iki 10 (is eiles)
+// jeigu iskrenta 1-5 masyvas turi buti tokio random skaiciaus ilgio ir
+// jo reiksmes turi buti atsitiktiniai skaicia nuo 0 iki 10 (gali kartotis)
+
+for($i = 0; $i < count($masyvas8); $i++) {
+    $kiekVidElementu = rand(0, 5);
+    if ($kiekVidElementu === 0) {
+        for ($j = 0; $j < 10; $j++) {
+            $masyvas8[$i][$j] = $j;
+        }
+    } else {
+        for ($a = 0; $a < $kiekVidElementu; $a++) {
+            $masyvas8[$i][$a] = rand(0, 5);
+        }
+    }
+}
+_pr($masyvas8);
