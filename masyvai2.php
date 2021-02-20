@@ -182,7 +182,7 @@ for ($i = 0; $i < 10; $i++) {
 for($i = 0; $i < count($masyvas8); $i++) {
     $kiekVidElementu = rand(0, 5);
     if ($kiekVidElementu === 0) {
-        for ($j = 0; $j < 10; $j++) {
+        for ($j = 0; $j < count($masyvas8); $j++) {
             $masyvas8[$i] = rand(0, 10);
         }
     } else {
