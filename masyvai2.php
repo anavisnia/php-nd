@@ -25,6 +25,7 @@ echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
 /* *************************
 A:Suskaičiuokite kiek masyve yra elementų didesnių už 10
 */
+echo 'A:Suskaičiuokite kiek masyve yra elementų didesnių už 10:';
 $count = 0;
 foreach($multidArr as $val1) {
     foreach ($val1 as $val2) {
@@ -38,6 +39,7 @@ _pr("A: Didesniu uz 10 yra: $count skaiciai/skaicius.");
 /* *************************
 B: Raskite didžiausio elemento reikšmę;
 */
+echo 'B: Raskite didžiausio elemento reikšmę:';
 $didziausiasSk = 0;
 for ($i = 0; $i < count($multidArr); $i++) {
     for ($j = 0; $j < count($multidArr[$i]); $j++) {
@@ -46,22 +48,28 @@ for ($i = 0; $i < count($multidArr); $i++) {
         }
     }
 }
-echo "B: Didziausiai skaicius: $didziausiasSk.  <br>";
+echo "<br>B: Didziausiai skaicius: $didziausiasSk.  <br>";
 
 /* *************************
 C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
 */
+echo 'C: Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)';
 $sumosMasyvas = $multidArr;
-
-foreach ($sumosMasyvas as $key => $value)   {
-    foreach($value as $key2 => $value2) {
-        $value[$key2] += $value2;
+$antroLygioMasyvoSumas = [];
+// ???????????
+foreach ($sumosMasyvas[0] as $key => $_)   {
+    $suma = 0;
+    foreach($sumosMasyvas as $numbers) {
+        $suma += $numbers[$key];
     }
+    $antroLygioMasyvoSumas[] = $suma;
  }
- _pr($sumosMasyvas);
+//  _pr($sumosMasyvas);
+ _pr($antroLygioMasyvoSumas);
 /* *************************
 D: Visus masyvus “pailginkite” iki 7 elementų
 */
+echo 'D: Visus masyvus “pailginkite” iki 7 elementų';
 foreach ($multidArr as $key => $_) {
     foreach(range(5, 7) as $val) {
         $multidArr[$key][$val] = rand(5, 25);
@@ -75,9 +83,10 @@ ir sumas panaudokite kaip reikšmes sukuriant naują masyvą.
 T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, 
 turinčio indeksą 0 dideliame masyve, visų elementų sumai 
 */
-$arrayAntrasD = [];
+echo 'E: Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai ';
+$arrayAntrasD = $multidArr;
 $sumosMasyvas = [];
-foreach ($multidArr as $antrasMasyvas) {
+foreach ($arrayAntrasD as $antrasMasyvas) {
     $suma = 0;
     foreach ($antrasMasyvas as $num) {
         $suma += $num;
