@@ -244,10 +244,26 @@ $symbolArr = ['#', '%', '+', '*', '@', '裡'];
 for($i = 0; $i < 10; $i++) {
     for($j = 0; $j < 10; $j++) {
         $randColor = '';
+        $randSymbolString = '';
         while (strlen($randColor) != 6) {
             $randColor .= rand(0, 9);
         }
-        $masyavs10[$i][$j] = ['value' =>  '', 'color' => '#'.$randColor];
+        for($a = 0; $a < 6; $a++) {
+            $randSymbol = array_rand(array_flip($symbolArr));
+            $randSymbolString .= $randSymbol;
+        }
+        $masyavs10[$i][$j] = ['value' =>  $randSymbolString, 'color' => '#'.$randColor];
     }
 }
 _pr($masyavs10);
+
+for ($i = 1; $i < count($masyavs10); $i++) {
+    for ($j = 1; $j < count($masyavs10[$i]); $j++) {
+        $randColor = '';
+        while (strlen($randColor) != 6) {
+        $randColor .= rand(0, 9);
+        }
+        echo('<div style="display:inline-block;margin:0px;padding:0px;width:85px;height:60px;text-align:center;font-size:14px;color: ' . $masyavs10[$i][$j]['color'] . '";>' . $masyavs10[$i][$j]['value'] . '</div>');
+    }
+    echo('<br>');
+}
