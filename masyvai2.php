@@ -259,10 +259,6 @@ _pr($masyvas10);
 
 for ($i = 1; $i < count($masyvas10); $i++) {
     for ($j = 1; $j < count($masyvas10[$i]); $j++) {
-        $randColor = '';
-        while (strlen($randColor) != 6) {
-        $randColor .= rand(0, 9);
-        }
         echo('<div style="display:inline-block;margin:0px;padding:0px;width:85px;height:60px;text-align:center;font-size:14px;color: ' . $masyvas10[$i][$j]['color'] . '";>' . $masyvas10[$i][$j]['value'] . '</div>');
     }
     echo('<br>');
