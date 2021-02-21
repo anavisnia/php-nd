@@ -218,7 +218,7 @@ $masyvas9 = $masyvas8;
 //         // echo gettype($value);
 //     }
 //  }
- _pr($masyvas9);
+//  _pr($masyvas9);
 usort($masyvas9, function ($a, $b) {
     if (is_array($a)) {
         $a = array_sum($a);
@@ -228,7 +228,7 @@ usort($masyvas9, function ($a, $b) {
     }
     return $a <=> $b;
 });
-_pr($masyvas9);
+// _pr($masyvas9);
 
 //Desimta
 echo '<br>' . '<h3>' . 'Desimta Uzduotis' . '</h3>' . '<br>';
@@ -239,7 +239,7 @@ Reikšmė value vienas iš atsitiktinai parinktų simbolių: #%+*@裡,
 o reikšmė color atsitiktinai sugeneruota spalva formatu: #XXXXXX. 
 Pasinaudoję masyvų atspausdinkite “kvadratą” kurį sudarytų masyvo reikšmės nuspalvintos spalva color.
 */
-$masyavs10 = [];
+$masyvas10 = [];
 $symbolArr = ['#', '%', '+', '*', '@', '裡'];
 for($i = 0; $i < 10; $i++) {
     for($j = 0; $j < 10; $j++) {
@@ -252,18 +252,18 @@ for($i = 0; $i < 10; $i++) {
             $randSymbol = array_rand(array_flip($symbolArr));
             $randSymbolString .= $randSymbol;
         }
-        $masyavs10[$i][$j] = ['value' =>  $randSymbolString, 'color' => '#'.$randColor];
+        $masyvas10[$i][$j] = ['value' =>  $randSymbolString, 'color' => '#'.$randColor];
     }
 }
-_pr($masyavs10);
+_pr($masyvas10);
 
-for ($i = 1; $i < count($masyavs10); $i++) {
-    for ($j = 1; $j < count($masyavs10[$i]); $j++) {
+for ($i = 1; $i < count($masyvas10); $i++) {
+    for ($j = 1; $j < count($masyvas10[$i]); $j++) {
         $randColor = '';
         while (strlen($randColor) != 6) {
         $randColor .= rand(0, 9);
         }
-        echo('<div style="display:inline-block;margin:0px;padding:0px;width:85px;height:60px;text-align:center;font-size:14px;color: ' . $masyavs10[$i][$j]['color'] . '";>' . $masyavs10[$i][$j]['value'] . '</div>');
+        echo('<div style="display:inline-block;margin:0px;padding:0px;width:85px;height:60px;text-align:center;font-size:14px;color: ' . $masyvas10[$i][$j]['color'] . '";>' . $masyvas10[$i][$j]['value'] . '</div>');
     }
     echo('<br>');
 }
