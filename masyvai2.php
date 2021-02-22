@@ -123,18 +123,30 @@ _pr($masyvas3);
 
 //Penkta
 echo '<br>' . '<h3>' . 'Penkta Uzduotis' . '</h3>' . '<br>';
+/*
+    geriausias do_while
+    *********
+    while (in_array($id, array_column($array, 'user_id'))) {
+        $id = rand(1, 1000000);
+    }
+*/
 $masyvas5 = [];
 for($i = 0; $i < 30; $i++) {
-    $randId = rand(1, 1000000);
-    $randPlace = rand(0, 100);
-    if (!in_array($randId, $masyvas5)) {
-        $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
-    } else {
+    // $randId = rand(1, 1000000);
+    // $randPlace = rand(0, 100);
+    do {
         $randId = rand(1, 1000000);
-        if (!in_array($randId, $masyvas5)) {
-            $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
-        }
-    }
+        $randPlace = rand(0, 100);
+        $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
+    } while(in_array($randId, $masyvas5));
+    // if (!in_array($randId, $masyvas5)) {
+    //     $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
+    // } else {
+    //     $randId = rand(1, 1000000);
+    //     if (!in_array($randId, $masyvas5)) {
+    //         $masyvas5[$i] = ['user_id' => $randId, 'place_in_row' => $randPlace];
+    //     }
+    // }
 }
 _pr($masyvas5); //egzistuoja/veikia
  
@@ -262,7 +274,7 @@ _pr($masyvas10);
 
 for ($i = 1; $i < count($masyvas10); $i++) {
     for ($j = 1; $j < count($masyvas10[$i]); $j++) {
-        echo('<div style="display:inline-block;margin:0px;padding:0px;width:85px;height:60px;text-align:center;font-size:14px;color: ' . $masyvas10[$i][$j]['color'] . '";>' . $masyvas10[$i][$j]['value'] . '</div>');
+        echo('<div style="display:inline-block;margin:0px;padding:0px;width:5%;font-size:14px;color: ' . $masyvas10[$i][$j]['color'] . '";>' . array_rand(array_flip($symbolArr)) . '</div>');
     }
     echo('<br>');
 }
