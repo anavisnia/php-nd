@@ -15,6 +15,9 @@ Sugeneruokite masyvą iš 10 elementų, kurio elementai būtų masyvai iš 5 ele
 foreach(range(1, 10) as $index1 => $_) {
     foreach (range(1, 5) as $index2 => $_) {
         $multidArr[$index1][$index2] = rand(5, 25);
+        // ----------------------------------------
+        // $multidArr[$index1][] = rand(5, 25);
+        // [] -> automatiskai generuojamas indeksas 
     }
 }
 _pr($multidArr);
@@ -99,7 +102,7 @@ _pr($sumosMasyvas);
 echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
 $masyvas3 = [];
 foreach(range(0, 9) as $indeks => $_) {
-    foreach(range(rand(0, 2), rand(2, 20)) as $indeks2 => $_) {
+    foreach(range(2, rand(3, 20)) as $indeks2 => $_) {
         $masyvas3[$indeks][$indeks2] = chr(rand(65, 90)); // upper case random letter from A-Z
     }
 }
