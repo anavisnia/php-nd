@@ -14,7 +14,7 @@ function printText($text)
 echo printText('Hello');
 
 //Antras
-echo '<br>' . '<h3>' . 'Antras Uzduotis' . '</h3>' . '<br>';
+echo '<br>' . '<h3>' . 'Antra Uzduotis' . '</h3>' . '<br>';
 /*
 Parašykite funkciją su dviem argumentais, pirmas argumentas tekstas, įterpiamas į h tagą, o antrasis tago numeris (1-6). Rašydami šią funkciją remkitės pirmame uždavinyje parašytą funkciją;
 */
@@ -24,7 +24,7 @@ function printText2($text, $hNum)
 }
 echo printText2('Dream', 2);
 
-echo '<br>' . '<h3>' . 'Trecias Uzduotis' . '</h3>' . '<br>';
+echo '<br>' . '<h3>' . 'Trecia Uzduotis' . '</h3>' . '<br>';
 /*
 Generuokite atsitiktinį stringą, pasinaudodami kodu md5(time()). 
 Visus skaitmenis stringe įdėkite į h1 tagą. 
@@ -41,7 +41,7 @@ $result = preg_replace_callback($pattern, function($matches){return findNum($mat
 // _pr($result); //raides
 
 //Ketvirtas
-echo '<br>' . '<h3>' . 'Ketvirtas Uzduotis' . '</h3>' . '<br>';
+echo '<br>' . '<h3>' . 'Ketvirta Uzduotis' . '</h3>' . '<br>';
 /*
 Parašykite funkciją, kuri skaičiuotų, iš kiek sveikų skaičių jos argumentas dalijasi be liekanos (išskyrus vienetą ir patį save) 
 Argumentą užrašykite taip, kad būtų galima įvesti tik sveiką skaičių;
