@@ -145,7 +145,7 @@ function masyvuSuma($masyvas) {
     echo $suma . '<br>';
 }
 masyvuSuma($myArray);
-    
+
 //Devintas
 echo '<br>' . '<h3>' . 'Devinta Uzduotis' . '</h3>' . '<br>';
 /*
@@ -154,9 +154,6 @@ Jeigu tarp trijų paskutinių elementų yra nors vienas ne pirminis skaičius, p
 */
 function isPrime($num) {
     if(0 === $num || 1 === $num) {
-        return false;
-    }
-    if(2 === $num) {
         return false;
     }
     for($i = 2; $i < $num; $i++) {
@@ -170,7 +167,7 @@ function isPrime($num) {
 for($i = 0; $i < 3; $i++) {
     $array9[$i] = rand(1, 33);
 }
-while (isPrime($array9[count($array9)-1]) || isPrime($array9[count($array9)-2]) || isPrime($array9[count($array9)-3])) {
+while (!isPrime($array9[count($array9)-1]) || !isPrime($array9[count($array9)-2]) || !isPrime($array9[count($array9)-3])) {
     $array9[] = rand(1, 33);
 }
 _pr($array9);
