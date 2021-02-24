@@ -3,8 +3,12 @@
 Sukurkite du puslapius pink.php ir rose.php. 
 Nuspalvinkite juos atitinkamo spalvom. 
 Į pink.php puslapį įdėkite formą su POST metodu ir mygtuku “GO TO ROSE”. 
-Formą nukreipkite, kad ji atsidarinėtų rose.php puslapyje. Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslapį, naršyklė būtų peradresuojama į pink.php puslapį.
+Formą nukreipkite, kad ji atsidarinėtų rose.php puslapyje. 
+Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslapį, naršyklė būtų peradresuojama į pink.php puslapį.
 */
+// if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    // header('Location: http://localhost/bit/nd1/webm/web8/pink.php');
+// }
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +20,8 @@ Formą nukreipkite, kad ji atsidarinėtų rose.php puslapyje. Padarykite taip, k
     <title>Rose</title>
 </head>
 <body style="background:#FF00CC;">
-    
+    <form style="display:none;" action="" method="get">
+    <input type="text" name="color">
+    </form>
 </body>
 </html>
