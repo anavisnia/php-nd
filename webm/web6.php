@@ -1,8 +1,8 @@
 <?php 
-if(isset($_GET['get'])) {
+if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $color = 'green';
 }
-if(isset($_POST['post'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $color = 'yellow';
 }
 ?>
@@ -17,12 +17,12 @@ if(isset($_POST['post'])) {
 <body style='background-color:<?php echo $color ?>;'>
     <!-- GET -->
     <form action="" method="get">
-    <button type="submit" name='get'>GET</button>
+    <button type="submit">GET</button>
     </form>
 
     <!-- POST -->
     <form action="" method="post">
-    <button type="submit" name='post'>POST</button>
+    <button type="submit">POST</button>
     </form>
 </body>
 </html>
