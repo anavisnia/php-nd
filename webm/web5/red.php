@@ -4,6 +4,7 @@ Sukurkite du atskirus puslapius blue.php ir red.php Juose sukurkite linkus į pa
 */
 if(!empty($_GET['color']) && $_GET['color'] == 'blue') {
     header('Location:http://localhost/bit/nd1/webm/web5/blue.php');
+    die;
 }
 ?>
 <!DOCTYPE html>
