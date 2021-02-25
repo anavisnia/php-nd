@@ -18,6 +18,6 @@ if(isset($_GET['color'])) {
 </head>
 <body style="background:#<?php echo $color?>;">
     <a href="http://localhost/bit/nd1/webm/web2.php">Home</a>
-    <a href="http://localhost/bit/nd1/webm/web2.php?color=ff1234">Colored</a>
+
 </body>
 </html>
