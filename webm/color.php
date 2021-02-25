@@ -19,8 +19,8 @@ else {
 </head>
 <body style="background:<?= $color ?>;">
 
-<a href="http://localhost/zuikis/color.php">Black</a>
-<a href="http://localhost/zuikis/color.php?color=1">Red</a>
+<a href="http://localhost/bit/nd1/webm/color.php">Black</a>
+<a href="http://localhost/bit/nd1/webm/color.php?color=1">Red</a>
 
 </body>
 </html>

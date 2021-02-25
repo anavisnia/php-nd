@@ -9,6 +9,8 @@ if(isset($_POST['submitBtn'])) {
     if (isset($_POST['checkbox'])) {
         _pc($_POST['checkbox']);
         $count++;
+        $postIlgis = count($_POST);
+        _pc($postIlgis);
     }
     echo "<h3 style='color:red;'>Pazymeta: $count</h3>";
 } else {
