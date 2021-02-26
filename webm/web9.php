@@ -16,6 +16,15 @@ if(isset($_POST['submitBtn'])) {
 } else {
     $color = 'black';
 }
+
+$randNum = rand(3,10);
+function createInput($num){
+    for($i = 0; $i < $num; $i++) {
+        $letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+        echo '<br>' . "<input type='checkbox' name='checkbox' id='$letters[$i]'>" .
+        '<label style="color:white;" for="checkbox">' . $letters[$i] . "</label>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +36,6 @@ if(isset($_POST['submitBtn'])) {
     <title>Document</title>
 </head>
 <body style="background:<?php echo $color ?>;">
-    <?php 
-    $randNum = rand(3,10);
-    function createInput($num){
-        for($i = 0; $i < $num; $i++) {
-            $letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
-            echo '<br>' . "<input type='checkbox' name='checkbox' id='$letters[$i]'>" .
-            '<label style="color:white;" for="checkbox">' . $letters[$i] . "</label>";
-        }
-    }
-    ?>
     <form action="" method="post">
         <?php echo createInput($randNum); ?> 
         <br>

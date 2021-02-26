@@ -17,12 +17,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body style='background-color:<?php echo $color ?>;'>
     <!-- GET -->
     <form action="" method="get">
-    <button type="submit">GET</button>
+        <button type="submit">GET</button>
     </form>
 
     <!-- POST -->
     <form action="" method="post">
-    <button type="submit">POST</button>
+        <button type="submit">POST</button>
     </form>
 </body>
 </html>

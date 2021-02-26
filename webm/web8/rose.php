@@ -6,9 +6,10 @@ Nuspalvinkite juos atitinkamo spalvom.
 Formą nukreipkite, kad ji atsidarinėtų rose.php puslapyje. 
 Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslapį, naršyklė būtų peradresuojama į pink.php puslapį.
 */
-// if($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // header('Location: http://localhost/bit/nd1/webm/web8/pink.php');
-// }
+if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    header('Location: http://localhost/bit/nd1/webm/web8/pink.php');
+    die;
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +21,5 @@ Padarykite taip, kad surinkus naršyklėje tiesiogiai adresą į rose.php puslap
     <title>Rose</title>
 </head>
 <body style="background:#FF00CC;">
-    <form style="display:none;" action="" method="get">
-    <input type="text" name="color">
-    </form>
 </body>
 </html>
