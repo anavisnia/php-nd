@@ -20,7 +20,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body style="background:<?= $color ?? 'black'?>">
+<body style="background:black;">
     <form style="color:white" action="./rezult.php" method="post">
         <?php
         $randNum = rand(3, 10);
