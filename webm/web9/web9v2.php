@@ -28,8 +28,9 @@ session_start();
         for($i=0; $i < $randNum; $i++) {
             echo '<input type="checkbox" name="check' . $letetrs[$i] . '">' . $letetrs[$i];
         }
+        $_SESSION['randNum'] = $randNum;
         ?>
-        <button type="submit">Spausk</button>
+        <button type="submit" name="submitBtn">Spausk</button>
     </form>
 </body>
 </html>

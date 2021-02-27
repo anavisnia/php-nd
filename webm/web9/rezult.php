@@ -2,7 +2,7 @@
 session_start();
 if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $postIlgis = count($_POST);
-    $_SESSION['rezultatas'] = $postIlgis; 
+    $_SESSION['rezultatas'] = $postIlgis  - 1; 
     _pc($postIlgis);
 } else {
     echo 'Klaida...';
@@ -19,7 +19,7 @@ if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <?php
         if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo '<p>Buvo pazymeta:' . ' ' . ($_SESSION['rezultatas']). ' ' . 'checkbox.</p>';
+            echo '<p>Buvo pazymeta:' . ' ' . ($_SESSION['rezultatas']). ' ' . 'checkbox' . ' is ' .  $_SESSION['randNum'] . '.' .'</p>';
         }
     ?>
 </body>
