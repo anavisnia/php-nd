@@ -4,11 +4,12 @@ Pakartokite 6 uždavinį.
 Papildykite jį kodu, kuris naršyklę po POST metodo peradresuotų tuo pačiu adresu (t.y. į patį save) jau GET metodu.
 */
  
-if(isset($_GET['get'])) {
+if($_SERVER['REQUEST_METHOD'] == 'GET') {
     $color = 'green';
 }
-if(isset($_POST['post'])) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: http://localhost/bit/nd1/webm/web7.php');
+    die;
 }
 ?>
 
