@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Saskaita</title>
 </head>
@@ -23,23 +24,29 @@
     </section>
     <section class="saskaitu_sarasas">
         <div class="sarasas">
-        <h3>Saskaitu sarasa:</h3>
-        <ul>
-            <li>Saskaita 1</li>
-            <button type="submit">Istrinti</button>
-            <a href="#">Prideti</a>
-            <a href="#">Nuskaiciuoti</a>
+            <h3>Saskaitu sarasas:</h3>
+            <ul class="account_list">
+                <div class="ul_item">
+                    <h4>Saskaita 1</h4>
+                    <button type="submit">Istrinti</button>
+                    <a href="#">Prideti</a>
+                    <a href="#">Nuskaiciuoti</a>
+                </div>
+                    
+                <div class="ul_item">
+                    <h4>Saskaita 2</h4>
+                    <button type="submit">Istrinti</button>
+                    <a href="#">Prideti</a>
+                    <a href="#">Nuskaiciuoti</a>
+                </div>
 
-            <li>Saskaita 2</li>
-            <button type="submit">Istrinti</button>
-            <a href="#">Prideti</a>
-            <a href="#">Nuskaiciuoti</a>
-
-            <li>Saskaita 3</li>
-            <button type="submit">istrinti</button>
-            <a href="#">Prideti</a>
-            <a href="#">Nuskaiciuoti</a>
-        </ul>
+                <div class="ul_item">
+                    <h4>Saskaita 3</h4>
+                    <button type="submit">istrinti</button>
+                    <a href="#">Prideti</a>
+                    <a href="#">Nuskaiciuoti</a>
+                </div>
+            </ul>
         </div>
     </section>
     
