@@ -29,22 +29,22 @@
                 <div class="ul_item">
                     <h4>Saskaita 1</h4>
                     <button type="submit">Istrinti</button>
-                    <a href="#">Prideti</a>
-                    <a href="#">Nuskaiciuoti</a>
+                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
+                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
                 </div>
                     
                 <div class="ul_item">
                     <h4>Saskaita 2</h4>
                     <button type="submit">Istrinti</button>
-                    <a href="#">Prideti</a>
-                    <a href="#">Nuskaiciuoti</a>
+                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
+                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
                 </div>
 
                 <div class="ul_item">
                     <h4>Saskaita 3</h4>
                     <button type="submit">istrinti</button>
-                    <a href="#">Prideti</a>
-                    <a href="#">Nuskaiciuoti</a>
+                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
+                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
                 </div>
             </ul>
         </div>
