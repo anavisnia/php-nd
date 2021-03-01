@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/add.css">
     <title>Prideti Lesas</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
             <p>Kliento Pavarde</p>
             <p>Kliento Saskaitos Likutis:</p>
             <form action="" method="post">
-                <label for="suma">Iveskite skaiciu kiek noryti prideti:</label>
+                <label for="suma">Iveskite skaiciu kiek norite prideti:</label>
                 <input type="number" name="suma">
             </form>
         </div>
