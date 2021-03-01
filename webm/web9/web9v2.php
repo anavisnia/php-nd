@@ -30,7 +30,7 @@ session_start();
         }
         $_SESSION['randNum'] = $randNum;
         ?>
-        <button type="submit" name="submitBtn">Spausk</button>
+        <button type="submit">Spausk</button>
     </form>
 </body>
 </html>

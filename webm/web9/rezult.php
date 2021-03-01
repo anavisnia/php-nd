@@ -2,7 +2,7 @@
 session_start();
 if(!empty($_POST) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $postIlgis = count($_POST);
-    $_SESSION['rezultatas'] = $postIlgis  - 1; 
+    $_SESSION['rezultatas'] = $postIlgis; 
     _pc($postIlgis);
 } else {
     echo 'Klaida...';
