@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/withdraw.css">
     <title>Nuskaiciuoti Lesas</title>
 </head>
 <body>
@@ -15,7 +16,7 @@
         <a href="add.php">Prideti lesas</a>
         <a href="withdraw.php">Nuskaiciuoti lesas</a>
     </div>
-    <section>
+    <section class="withdraw_main">
         <div class="person_info_header">
             <h3>Nuskaicioti Lesas</h3>
         </div>
