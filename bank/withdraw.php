@@ -10,12 +10,7 @@
     <title>Nuskaiciuoti Lesas</title>
 </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a href="create.php">Sukurti nauja saskaita</a>
-        <a href="add.php">Prideti lesas</a>
-        <a href="withdraw.php">Nuskaiciuoti lesas</a>
-    </div>
+    <?php include_once(__DIR__.'./components/navbar.php')?>
     <section class="withdraw_main">
         <div class="person_info_header">
             <h3>Nuskaicioti Lesas</h3>

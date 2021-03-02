@@ -13,12 +13,7 @@
     <title>Saskaita</title>
 </head>
 <body>
-    <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a href="create.php">Sukurti nauja saskaita</a>
-        <a href="add.php">Prideti lesas</a>
-        <a href="withdraw.php">Nuskaiciuoti lesas</a>
-    </div>
+    <?php include_once(__DIR__.'./components/navbar.php')?>
     <section class="hero">
         <h1>Bankas</h1>
     </section>
