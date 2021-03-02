@@ -1,10 +1,12 @@
 <?php
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     _pc($_POST);
-    $fName = $_POST['fName'];
-    $lName = $_POST['lName'];
-    $accountNum = $_POST['accountNum'];
-    $personId = $_POST['personId'];
+    // $fName = $_POST['fName'];
+    // $lName = $_POST['lName'];
+    // $accountNum = $_POST['accountNum'];
+    // $personId = $_POST['personId'];
+    $userData = ['fName' => $_POST['fName'], 'lName' => $_POST['lName'], 'accountNum' => $_POST['accountNum'], 'personId' => $_POST['personId']];
+    file_put_contents('users.json', json_encode($userData),FILE_APPEND);
 }
 
 ?>
