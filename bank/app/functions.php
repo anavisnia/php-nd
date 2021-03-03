@@ -52,6 +52,8 @@ function create(string $fName, string $lName, string $accountNum, int $personId)
     writeData($users);
 }
 
+
+
 function add(int $id, int $currentAmount) : void
 {
     $users = readData();
@@ -62,7 +64,7 @@ function add(int $id, int $currentAmount) : void
     if($currentAmount < 0) {
         return;
     }
-    $user['currentAmount'] = $currentAmount;
+    $user['currentAmount'] += $currentAmount;
     deleteUser($id);
 
     $users = readData();
@@ -80,15 +82,20 @@ function withdraw(int $id, int $withdraw) : void
     $user['currentAmount'] = $currentAmount;
     if($withdraw > $currentAmount) {
         return;
+    } else {
+        $afterWithdraw = $currentAmount - $withdraw;
+        $afterWithdraw = (int) $afterWithdraw;
+        $user['currentAmount'] = $afterWithdraw;
+        // $currentAmount -= $withdraw;
     }
-    $afterWithdraw = $currentAmount - $withdraw;
-    $user['currentAmount'] = $afterWithdraw;
     deleteUser($id);
 
     $users = readData();
     $users[] = $user;
     writeData($users);
+    
 }
+
 
 function deleteUser(int $id) : void
 {

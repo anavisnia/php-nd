@@ -29,7 +29,7 @@ require __DIR__.'/bootstrap.php';
                             <button type="submit">Istrinti</button>
                         </form>
                         <a href="<?= URL ?>add.php?id=<?= $user['id'] ?>">Prideti</a>
-                        <a href="<?= URL ?>withdraw.php">Nuskaiciuoti</a>
+                        <a href="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>">Nuskaiciuoti</a>
                     </div>
                 <?php endforeach ?>
 

@@ -4,8 +4,8 @@ require __DIR__.'/bootstrap.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
-    $currentAmount = $_POST['currentAmount'] ?? 0;
-    withdraw($id, $currentAmount);
+    $withdraw = $_POST['withdraw'] ?? 0;
+    withdraw($id, $withdraw);
     header('Location: '.URL);
     die;
 }
@@ -42,9 +42,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Pavarde: <?= $user['lName'] ?></p>
             <p>Kliento Saskaitos Nr.: <?= $user['accountNum'] ?></p>
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
-            <form action="<?= URL ?>add.php?id=<?= $user['id'] ?>" method="post">
-                <label for="suma">Iveskite skaiciu kiek norite nuskaiciuoti:</label>
-                <input type="number" name="suma">
+            <form action="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>" method="post">
+                <label for="withdraw">Iveskite skaiciu kiek norite nuskaiciuoti:</label>
+                <input type="number" name="withdraw">
+                <button type="submit">Nuskaicioti</button>
             </form>
         </div>
     </section>
