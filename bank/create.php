@@ -1,12 +1,17 @@
 <?php
+require __DIR__.'/bootstrap.php';
+// sukurimas userio
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     _pc($_POST);
-    // $fName = $_POST['fName'];
-    // $lName = $_POST['lName'];
-    // $accountNum = $_POST['accountNum'];
-    // $personId = $_POST['personId'];
-    $userData = ['fName' => $_POST['fName'], 'lName' => $_POST['lName'], 'accountNum' => $_POST['accountNum'], 'personId' => $_POST['personId']];
-    file_put_contents('users.json', json_encode($userData),FILE_APPEND);
+    $fName = (string) $_POST['fName'] ?? 'Bot';
+    $lName = (string) $_POST['lName'] ?? 'Botbot';
+    $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
+    $personId = (int) $_POST['personId'] ?? '00000000000';
+    // $userData = ['fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
+    // file_put_contents('users.json', json_encode($userData),FILE_APPEND);
+    create($fName, $lName, $accountNum, $personId);
+    header('Location: '.URL);
+    die;
 }
 
 ?>
@@ -28,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <h3>Sukurti Saskaita</h3>
         </div>
         <div class="personal_info_body">
-            <form action="" method="post">
+            <form action="<?= URL ?>create.php" method="post">
                 <div class="ul_item">
                     <label style="color: cornflowerblue;" for="fName">Vardas</label>
                     <input type="text" name="fName">

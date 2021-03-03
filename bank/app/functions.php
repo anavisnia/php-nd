@@ -23,13 +23,23 @@ function getNextId() : int
         file_put_contents(DIR.'data/indexes.json', $index);
     }
     $index = file_get_contents(DIR.'data/indexes.json');
+    $index = json_decode($index, 1);
     $id = (int) $index['id'];
     $index['id'] = $id + 1;
+    $index = json_encode($index);
     file_put_contents(DIR.'/data/indexes.json', $index);
     return $id;
 }
 
-
+function create(string $fName, string $lName, string $accountNum, int $personId) : void
+{
+    $users = readData();
+    $id = getNextId();
+    $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
+    // 2d array, jo sekantis index'as musu sukurtas useris
+    $users[] = $user;
+    writeData($users);
+}
 
 
 

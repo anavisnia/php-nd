@@ -1,6 +1,6 @@
 <?php
 require __DIR__.'/bootstrap.php';
-_pc(readData());
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,16 @@ _pc(readData());
         <div class="sarasas">
             <h3>Saskaitu sarasas:</h3>
             <ul class="account_list">
-                <div class="ul_item">
+                <?php foreach(readData() as $user) : ?>
+                    <div class="ul_item">
+                        <h4>Saskaitos Nr. <?= $user['accountNum'] ?> </h4>
+                        <button type="submit">Istrinti</button>
+                        <a href="<?= URL ?>add.php">Prideti</a>
+                        <a href="<?= URL ?>withdraw.php">Nuskaiciuoti</a>
+                    </div>
+                <?php endforeach ?>
+
+                <!-- <div class="ul_item">
                     <h4>Saskaita 1</h4>
                     <button type="submit">Istrinti</button>
                     <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
@@ -41,7 +50,7 @@ _pc(readData());
                     <button type="submit">istrinti</button>
                     <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
                     <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
-                </div>
+                </div> -->
             </ul>
         </div>
     </section>
