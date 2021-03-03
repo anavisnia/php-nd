@@ -61,7 +61,7 @@ function add(int $id, int $currentAmount) : void
     }
     $user['currentAmount'] = $currentAmount;
     deleteUser($id);
-    
+
     $users = readData();
     $users[] = $user;
     writeData($users);
