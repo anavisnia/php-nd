@@ -1,3 +1,25 @@
+<?php
+require __DIR__.'/bootstrap.php';
+//POST
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $id = $_GET['id'] ?? 0;
+    $id = (int) $id;
+    $currentAmount = $_POST['currentAmount'] ?? 0;
+    withdraw($id, $currentAmount);
+    header('Location: '.URL);
+    die;
+}
+//GET
+if($_SERVER['REQUEST_METHOD'] == 'GET') {
+    $id = $_GET['id'] ?? 0;
+    $id = (int) $id;
+    $user = getUser($id);
+    if(!$user) {
+        header('Location: '.URL);
+        die; 
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +42,7 @@
             <p>Kliento Pavarde: <?= $user['lName'] ?></p>
             <p>Kliento Saskaitos Nr.: <?= $user['accountNum'] ?></p>
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
-            <form action="" method="post">
+            <form action="<?= URL ?>add.php?id=<?= $user['id'] ?>" method="post">
                 <label for="suma">Iveskite skaiciu kiek norite nuskaiciuoti:</label>
                 <input type="number" name="suma">
             </form>

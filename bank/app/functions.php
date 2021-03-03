@@ -59,7 +59,30 @@ function add(int $id, int $currentAmount) : void
     if(!$user) {
         return;
     }
+    if($currentAmount < 0) {
+        return;
+    }
     $user['currentAmount'] = $currentAmount;
+    deleteUser($id);
+
+    $users = readData();
+    $users[] = $user;
+    writeData($users);
+}
+
+function withdraw(int $id, int $withdraw) : void
+{
+    $users = readData();
+    $user = getUser($id);
+    if(!$user) {
+        return;
+    }
+    $user['currentAmount'] = $currentAmount;
+    if($withdraw > $currentAmount) {
+        return;
+    }
+    $afterWithdraw = $currentAmount - $withdraw;
+    $user['currentAmount'] = $afterWithdraw;
     deleteUser($id);
 
     $users = readData();
