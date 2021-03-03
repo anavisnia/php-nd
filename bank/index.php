@@ -1,5 +1,6 @@
 <?php
-
+require __DIR__.'/bootstrap.php';
+_pc(readData());
 ?>
 <!DOCTYPE html>
 <html lang="en">
