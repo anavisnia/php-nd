@@ -16,9 +16,10 @@
             <h3>Nuskaicioti Lesas</h3>
         </div>
         <div class="person_info_body">
-            <p>Kliento Vardas</p>
-            <p>Kliento Pavarde</p>
-            <p>Kliento Saskaitos Likutis:</p>
+        <p>Kliento Vardas: <?= $user['fName'] ?></p>
+            <p>Kliento Pavarde: <?= $user['lName'] ?></p>
+            <p>Kliento Saskaitos Nr.: <?= $user['accountNum'] ?></p>
+            <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
             <form action="" method="post">
                 <label for="suma">Iveskite skaiciu kiek norite nuskaiciuoti:</label>
                 <input type="number" name="suma">

@@ -31,6 +31,17 @@ function getNextId() : int
     return $id;
 }
 
+function getUser(int $id) : ?array
+{
+    $users = readData();
+    foreach($users as $user) {
+        if($user['id'] == $id) {
+            return $user;
+        }
+    }
+    return null;
+}
+
 function create(string $fName, string $lName, string $accountNum, int $personId) : void
 {
     $users = readData();
@@ -41,8 +52,32 @@ function create(string $fName, string $lName, string $accountNum, int $personId)
     writeData($users);
 }
 
+function add(int $id, int $currentAmount) : void
+{
+    $users = readData();
+    $user = getUser($id);
+    if(!$user) {
+        return;
+    }
+    $user['currentAmount'] = $currentAmount;
+    deleteUser($id);
+    
+    $users = readData();
+    $users[] = $user;
+    writeData($users);
+}
 
-
+function deleteUser(int $id) : void
+{
+    $users = readData();
+    foreach($users as $key => $user) {
+        if($user['id'] == $id) {
+            unset($users[$key]);
+            writeData($users);
+            return;
+        }
+    }
+};
 
 
 

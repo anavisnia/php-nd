@@ -25,8 +25,10 @@ require __DIR__.'/bootstrap.php';
                 <?php foreach(readData() as $user) : ?>
                     <div class="ul_item">
                         <h4>Saskaitos Nr. <?= $user['accountNum'] ?> </h4>
-                        <button type="submit">Istrinti</button>
-                        <a href="<?= URL ?>add.php">Prideti</a>
+                        <form action="<?= URL ?>delete.php?id=<?= $user['id'] ?>" method="post">
+                            <button type="submit">Istrinti</button>
+                        </form>
+                        <a href="<?= URL ?>add.php?id=<?= $user['id'] ?>">Prideti</a>
                         <a href="<?= URL ?>withdraw.php">Nuskaiciuoti</a>
                     </div>
                 <?php endforeach ?>
