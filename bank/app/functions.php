@@ -35,7 +35,7 @@ function create(string $fName, string $lName, string $accountNum, int $personId)
 {
     $users = readData();
     $id = getNextId();
-    $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
+    $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId, 'currentAmount' => 0];
     // 2d array, jo sekantis index'as musu sukurtas useris
     $users[] = $user;
     writeData($users);
