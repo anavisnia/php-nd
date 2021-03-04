@@ -79,8 +79,11 @@ function withdraw(int $id, int $withdraw) : void
     if(!$user) {
         return;
     }
+    if($withdraw <= 0) {
+        return;
+    }
     $currentAmount = $user['currentAmount'];
-    $afterWithdraw = $currentAmount - $withdraw;
+    $afterWithdraw = (int) $currentAmount - (int) $withdraw;
     $afterWithdraw = (int) $afterWithdraw;
     if($afterWithdraw >= 0) {
         $user['currentAmount'] = $afterWithdraw;
