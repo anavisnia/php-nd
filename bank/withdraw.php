@@ -5,6 +5,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
     $withdraw = $_POST['withdraw'] ?? 0;
+    if(!is_int($withdraw)) {
+        $withdraw = 0;
+    }
     withdraw($id, $withdraw);
     header('Location: '.URL);
     die;
@@ -44,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
             <form action="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>" method="post">
                 <p>Iveskite skaiciu kiek norite nuskaiciuoti:</p>
-                <input type="number" name="withdraw">
+                <input type="text" name="withdraw">
                 <button type="submit">Nuskaicioti</button>
             </form>
         </div>
