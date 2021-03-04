@@ -107,7 +107,15 @@ function deleteUser(int $id) : void
     }
 };
 
+function checkPersonId(int $personId)
+{
+    if(count($personId) ) {
 
+    }
+
+    // be paskutinio kontrolinio skaiciaus
+    // /^[3-6][3-9][0-9](?:0[1-9]|1[012])((?:0[1-9])|(?:1[0-2]))[0-9][0-9][1-9]/
+}
 
 /*
 //  accountNum - LT + 18num    personId - 11num

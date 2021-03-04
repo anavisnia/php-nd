@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fName = (string) $_POST['fName'] ?? 'Bot';
     $lName = (string) $_POST['lName'] ?? 'Botbot';
     $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
-    $personId = (int) $_POST['personId'] ?? '00000000000';
+    $personId = (string) $_POST['personId'] ?? '00000000000';
     // $userData = ['fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
     // file_put_contents('users.json', json_encode($userData),FILE_APPEND);
     create($fName, $lName, $accountNum, $personId);
