@@ -79,21 +79,39 @@ function withdraw(int $id, int $withdraw) : void
     if(!$user) {
         return;
     }
-    $user['currentAmount'] = $currentAmount;
-    if($withdraw > $currentAmount) {
-        return;
-    } else {
-        $afterWithdraw = $currentAmount - $withdraw;
-        $afterWithdraw = (int) $afterWithdraw;
-        $user['currentAmount'] = $afterWithdraw;
-        // $currentAmount -= $withdraw;
-    }
+    $currentAmount = $user['currentAmount'];
+    $afterWithdraw = $currentAmount - $withdraw;
+    $afterWithdraw = (int) $afterWithdraw;
+    $user['currentAmount'] = $afterWithdraw;
     deleteUser($id);
 
     $users = readData();
     $users[] = $user;
     writeData($users);
 }
+
+// function withdraw(int $id, int $withdraw) : void
+// {
+//     $users = readData();
+//     $user = getUser($id);
+//     if(!$user) {
+//         return;
+//     }
+//     $user['currentAmount'] = $currentAmount;
+//     if($withdraw > $currentAmount) {
+//         return;
+//     } else {
+//         $afterWithdraw = $currentAmount - $withdraw;
+//         $afterWithdraw = (int) $afterWithdraw;
+//         $user['currentAmount'] = $afterWithdraw;
+//         // $currentAmount -= $withdraw;
+//     }
+//     deleteUser($id);
+
+//     $users = readData();
+//     $users[] = $user;
+//     writeData($users);
+// }
 
 
 function deleteUser(int $id) : void

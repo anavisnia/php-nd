@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Saskaitos Nr.: <?= $user['accountNum'] ?></p>
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
             <form action="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>" method="post">
-                <label for="withdraw">Iveskite skaiciu kiek norite nuskaiciuoti:</label>
+                <p>Iveskite skaiciu kiek norite nuskaiciuoti:</p>
                 <input type="number" name="withdraw">
                 <button type="submit">Nuskaicioti</button>
             </form>
