@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
 
             <form action="<?= URL ?>add.php?id=<?= $user['id'] ?>" method="post">
-                <label for="currentAmount">Iveskite skaiciu kiek norite prideti:</label>
+                <p>Iveskite skaiciu kiek norite prideti:</p>
                 <input type="text" name="currentAmount" value="<?= $user['currentAmount'] ?>">
                 <button type="submit">Prideti</button>
             </form>
