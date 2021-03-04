@@ -61,12 +61,11 @@ function add(int $id, int $currentAmount) : void
     if(!$user) {
         return;
     }
-    if($currentAmount < 0) {
+    if($currentAmount <= 0) {
         return;
     }
     $user['currentAmount'] += $currentAmount;
     deleteUser($id);
-
     $users = readData();
     $users[] = $user;
     writeData($users);

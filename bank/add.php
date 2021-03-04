@@ -10,6 +10,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
     $currentAmount = $_POST['currentAmount'] ?? 0;
+    if(!is_int($currentAmount)) {
+        $currentAmount = 0;
+    }
     add($id, $currentAmount);
     header('Location: '.URL);
     die;
