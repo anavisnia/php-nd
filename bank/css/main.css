@@ -28,6 +28,25 @@
     text-align: justify;
     margin: 0px 40px;
 }
+form {
+    display: inline-block;
+}
+.ul_item > form > a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 13px;
+    padding: 2px 10px;
+    color:black;
+}
+.ul_item > form > a:hover {
+    color: cornflowerblue;
+    background-color:rgb(228, 228, 228);
+}
+.ul_item > form > button {
+    display: inline-block;
+    margin: 15px;
+}
 .ul_item {
     height: 50px;
 }
@@ -42,19 +61,4 @@
     color: cornflowerblue;
 }
 
-.ul_item > button {
-    display: inline-block;
-    margin: 15px;
-}
-.ul_item > a {
-    display: inline-block;
-    text-decoration: none;
-    margin: 15px;
-    font-size: 13px;
-    padding: 2px 10px;
-    color:black;
-}
-.ul_item > a:hover {
-    color: cornflowerblue;
-    background-color:rgb(228, 228, 228);
-}
+

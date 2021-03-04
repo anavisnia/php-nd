@@ -27,9 +27,9 @@ require __DIR__.'/bootstrap.php';
                         <h4>Saskaitos Nr. <?= $user['accountNum'] ?> </h4>
                         <form action="<?= URL ?>delete.php?id=<?= $user['id'] ?>" method="post">
                             <button type="submit">Istrinti</button>
+                            <a href="<?= URL ?>add.php?id=<?= $user['id'] ?>">Prideti</a>
+                            <a href="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>">Nuskaiciuoti</a>
                         </form>
-                        <a href="<?= URL ?>add.php?id=<?= $user['id'] ?>">Prideti</a>
-                        <a href="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>">Nuskaiciuoti</a>
                     </div>
                 <?php endforeach ?>
 

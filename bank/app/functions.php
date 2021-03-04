@@ -93,7 +93,6 @@ function withdraw(int $id, int $withdraw) : void
     $users = readData();
     $users[] = $user;
     writeData($users);
-    
 }
 
 
