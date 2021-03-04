@@ -42,11 +42,21 @@ function getUser(int $id) : ?array
     return null;
 }
 
-function create(string $fName, string $lName, string $accountNum, int $personId) : void
+// function create(string $fName, string $lName, string $accountNum, int $personId) : void
+// {
+//     $users = readData();
+//     $id = getNextId();
+//     $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId, 'currentAmount' => 0];
+//     // 2d array, jo sekantis index'as musu sukurtas useris
+//     $users[] = $user;
+//     writeData($users);
+// }
+
+function create(string $fName, string $lName, int $personId) : void
 {
     $users = readData();
     $id = getNextId();
-    $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId, 'currentAmount' => 0];
+    $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => createAccountNum(), 'personId' => $personId, 'currentAmount' => 0];
     // 2d array, jo sekantis index'as musu sukurtas useris
     $users[] = $user;
     writeData($users);
@@ -115,6 +125,21 @@ function checkPersonId(int $personId)
 
     // be paskutinio kontrolinio skaiciaus
     // /^[3-6][3-9][0-9](?:0[1-9]|1[012])((?:0[1-9])|(?:1[0-2]))[0-9][0-9][1-9]/
+}
+
+function createAccountNum() : string
+{
+    $checkedNum = '01';
+    $bankCode = '88000';
+    // $priorAccountNum = '12345678901';
+    $randAccNum = '';
+    for($i = 0; $i <= 10; $i++) {
+        $rand = (string) rand(0, 9);
+        $randAccNum .= $rand;
+    }
+    $accountNum = 'LT' . $checkedNum . $bankCode . $randAccNum;
+    $accountNum = (string) $accountNum;
+    return $accountNum;
 }
 
 /*

@@ -5,11 +5,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     _pc($_POST);
     $fName = (string) $_POST['fName'] ?? 'Bot';
     $lName = (string) $_POST['lName'] ?? 'Botbot';
-    $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
+    // $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
     $personId = (string) $_POST['personId'] ?? '00000000000';
     // $userData = ['fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
     // file_put_contents('users.json', json_encode($userData),FILE_APPEND);
-    create($fName, $lName, $accountNum, $personId);
+    // create($fName, $lName, $accountNum, $personId);
+    create($fName, $lName, $personId);
     header('Location: '.URL);
     die;
 }
@@ -44,11 +45,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" name="lName">
                 </div>
                 <br>
-                <div class="ul_item">
+                <!-- <div class="ul_item">
                     <label style="color: cornflowerblue;" for="accountNum">Saskaitos Numeris</label>
                     <input type="text" name="accountNum">
                 </div>
-                <br>
+                <br> -->
                 <div class="ul_item">
                     <label style="color: cornflowerblue;" for="personId">Asmens Kodas</label>
                     <input type="number" name="personId">
