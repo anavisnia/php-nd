@@ -1,6 +1,35 @@
 <?php
 require __DIR__.'/bootstrap.php';
-
+// $addStatus = $_SESSION['addStatus'];
+// if($addStatus) {
+//     $result = true;
+//     message($result);
+// } else {
+//     $result = false;
+//     message($result);
+// }
+// $withdrawstatus = $_SESSION['withdrawStatus'];
+// if($withdrawstatus) {
+//     $result = true;
+//     message($result);
+// } else {
+//     $result = false;
+//     message($result);
+// }
+// $createStatus = $_SESSION['createUser'];
+// if($createStatus) {
+//     $result = true;
+//     message($result);
+// } else {
+//     $result = false;
+//     message($result);
+// }
+// $deleteStatus = $_SESSION['deleteUser'];
+// message($deleteStatus);
+// unset($_SESSION['deleteUser']);
+// unset($_SESSION['createUser']);
+// unset($_SESSION['withdrawStatus']);
+// unset($_SESSION['addStatus']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,26 +61,16 @@ require __DIR__.'/bootstrap.php';
                         </form>
                     </div>
                 <?php endforeach ?>
-
-                <!-- <div class="ul_item">
-                    <h4>Saskaita 1</h4>
-                    <button type="submit">Istrinti</button>
-                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
-                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
-                </div>
-                    
-                <div class="ul_item">
-                    <h4>Saskaita 2</h4>
-                    <button type="submit">Istrinti</button>
-                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
-                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
-                </div>
-
-                <div class="ul_item">
-                    <h4>Saskaita 3</h4>
-                    <button type="submit">istrinti</button>
-                    <a href="http://localhost/bit/nd1/bank/add.php">Prideti</a>
-                    <a href="http://localhost/bit/nd1/bank/withdraw.php">Nuskaiciuoti</a>
+                <!-- <div class="message toast" style="display:<?= $hideDiv?> ?? inline-block">
+                <?php 
+                    // if ( $withdrawSu == true) {
+                    //     echo '<p>'. 'Pinigai sekmingai nuskaiciuoti.' .'</p>';
+                    // } elseif ( $withdrawSu == false) {
+                    //     echo '<p>'. 'Nuskaicioti pinigu nesigavo. Bandykite dar karta.' .'</p>';
+                    // } else {
+                    //     $hideDiv = 'none';
+                    // }
+                ?>
                 </div> -->
             </ul>
         </div>

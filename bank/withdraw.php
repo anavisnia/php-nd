@@ -5,10 +5,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
     $withdraw = $_POST['withdraw'] ?? 0;
-    if(!is_int($withdraw)) {
-        $withdraw = 0;
-    }
     withdraw($id, $withdraw);
+    $_SESSION['redirect'] = true;
     header('Location: '.URL);
     die;
 }

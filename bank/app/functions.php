@@ -60,6 +60,7 @@ function create(string $fName, string $lName, int $personId) : void
     // 2d array, jo sekantis index'as musu sukurtas useris
     $users[] = $user;
     writeData($users);
+    $_SESSION['createUser'] = true;
 }
 
 
@@ -72,6 +73,7 @@ function add(int $id, int $currentAmount) : void
         return;
     }
     if($currentAmount <= 0) {
+        $_SESSION['addStatus'] = false;
         return;
     }
     $user['currentAmount'] += $currentAmount;
@@ -79,6 +81,7 @@ function add(int $id, int $currentAmount) : void
     $users = readData();
     $users[] = $user;
     writeData($users);
+    $_SESSION['addStatus'] = true;
 }
 
 function withdraw(int $id, int $withdraw) : void
@@ -100,7 +103,9 @@ function withdraw(int $id, int $withdraw) : void
         $users = readData();
         $users[] = $user;
         writeData($users);
+        $_SESSION['withdrawStatus'] = true;
     }  else {
+        $_SESSION['withdrawStatus'] = false;
         return;
     }
 }
@@ -112,7 +117,10 @@ function deleteUser(int $id) : void
         if($user['id'] == $id) {
             unset($users[$key]);
             writeData($users);
+            $_SESSION['deleteUser'] = true;
             return;
+        } else {
+            $_SESSION['deleteUser'] = false;
         }
     }
 };
@@ -142,6 +150,16 @@ function createAccountNum() : string
     return $accountNum;
 }
 
+function message($result) : void
+{
+    if($result == true) {
+        echo "<p>Operacija atlikta sekmingai!</p>";
+    } elseif ($result == false) {
+        echo "<p>Ivyko klaida, bandykite dar karta!</p>";
+    } else {
+        echo '';
+    }
+}
 /*
 //  accountNum - LT + 18num    personId - 11num
 [
