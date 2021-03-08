@@ -1,18 +1,30 @@
 <?php
 require __DIR__.'/bootstrap.php';
+$fName = '';
+$lName = '';
 // sukurimas userio
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     _pc($_POST);
     $fName = (string) $_POST['fName'] ?? 'Bot';
     $lName = (string) $_POST['lName'] ?? 'Botbot';
-    // $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
-    $personId = (string) $_POST['personId'] ?? '00000000000';
-    // $userData = ['fName' => $fName, 'lName' => $lName, 'accountNum' => $accountNum, 'personId' => $personId];
-    // file_put_contents('users.json', json_encode($userData),FILE_APPEND);
-    // create($fName, $lName, $accountNum, $personId);
-    create($fName, $lName, $personId);
-    header('Location: '.URL);
-    die;
+    $personId = (string) $_POST['personId'] ?? 00000000000;
+    if (strlen($fName) <= 3 || empty($fName)) {
+        $fNameErr = true;
+    } elseif (isset($_POST['fName']) && !empty($_POST['fName']) && strlen($fname) > 3) {
+        $fName = (string) $_POST['fName'];
+    }
+
+    if (strlen($lName) <= 3 || empty($lName)) {
+        $lNameErr = true;
+    } elseif (isset($_POST['lName']) && !empty($_POST['lName']) && strlen($lName) > 3) {
+        $lName = (string) $_POST['lName'];
+    }
+    
+    if (!isset($fNameErr) && !isset($lNameErr)) {
+        create($fName, $lName, $personId);
+        header('Location: '.URL);
+        die;
+    }
 }
 
 ?>
@@ -38,11 +50,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="ul_item">
                     <label style="color: cornflowerblue;" for="fName">Vardas</label>
                     <input type="text" name="fName">
+                    <?php
+                        if(isset($fNameErr)) {
+                            echo '<p>'.'Vardas turi buti ilgesnis nei 3 simboliai.'.'</p>';
+                        }
+                    ?>
                 </div>
                 <br>
                 <div class="ul_item">
                     <label style="color: cornflowerblue;" for="lName">Pavarde</label>
                     <input type="text" name="lName">
+                    <?php
+                        if(isset($lNameErr)) {
+                            echo '<p>'.'Pavarde turi buti ilgesnis nei 3 simboliai.'.'</p>';
+                        }
+                    ?>
                 </div>
                 <br>
                 <!-- <div class="ul_item">
