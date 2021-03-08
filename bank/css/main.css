@@ -24,13 +24,19 @@
     padding: 10px 0px;
 }
 .account_list {
+    width: 100%;
     display: inline-block;
     list-style-type: none;
     text-align: justify;
-    margin: 0px 40px;
+    margin: auto;
 }
 form {
     display: inline-block;
+}
+.ul_item {
+    width: 90%;
+    height: auto;
+    margin: auto;
 }
 .ul_item > form > a {
     display: inline-block;
@@ -48,9 +54,7 @@ form {
     display: inline-block;
     margin: 15px;
 }
-.ul_item {
-    height: auto;
-}
+
 .ul_item:nth-child(odd) {
     background-color: rgb(221, 221, 221);
 }
