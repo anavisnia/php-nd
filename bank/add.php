@@ -2,15 +2,10 @@
 require __DIR__.'/bootstrap.php';
 //POST
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // $fName = (string) $_POST['fName'] ?? 'Bot';
-    // $lName = (string) $_POST['lName'] ?? 'Botbot';
-    // $accountNum = (string) $_POST['accountNum'] ?? 'LT000000000000000000';
-    // $personId = (int) $_POST['personId'] ?? '00000000000';
-
     $id = $_GET['id'] ?? 0;
     $id = (int) $id;
-    $currentAmount = $_POST['currentAmount'] ?? 0;
-    add($id, $currentAmount);
+    $addAmount = (float) $_POST['addAmount'] ?? 0;
+    add($id, $addAmount);
     header('Location: '.URL);
     die;
 }
@@ -50,7 +45,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
             <form action="<?= URL ?>add.php?id=<?= $user['id'] ?>" method="post">
                 <p>Iveskite skaiciu kiek norite prideti:</p>
-                <input type="text" name="currentAmount" value="<?= $user['currentAmount'] ?>">
+                <input type="text" name="addAmount" value="<?= $user['currentAmount'] ?>">
+                <p>Eur</p>
                 <button type="submit">Prideti</button>
             </form>
         </div>

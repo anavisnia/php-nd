@@ -1,35 +1,5 @@
 <?php
 require __DIR__.'/bootstrap.php';
-// $addStatus = $_SESSION['addStatus'];
-// if($addStatus) {
-//     $result = true;
-//     message($result);
-// } else {
-//     $result = false;
-//     message($result);
-// }
-// $withdrawstatus = $_SESSION['withdrawStatus'];
-// if($withdrawstatus) {
-//     $result = true;
-//     message($result);
-// } else {
-//     $result = false;
-//     message($result);
-// }
-// $createStatus = $_SESSION['createUser'];
-// if($createStatus) {
-//     $result = true;
-//     message($result);
-// } else {
-//     $result = false;
-//     message($result);
-// }
-// $deleteStatus = $_SESSION['deleteUser'];
-// message($deleteStatus);
-// unset($_SESSION['deleteUser']);
-// unset($_SESSION['createUser']);
-// unset($_SESSION['withdrawStatus']);
-// unset($_SESSION['addStatus']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,6 +34,24 @@ require __DIR__.'/bootstrap.php';
                         </form>
                     </div>
                 <?php endforeach ?>
+                <?php
+                    // if(isset($_SESSION['status'])) {
+                    //     echo '<p style="color:green;margin-left:80px;">'.$_SESSION['status'].'</p>';
+                    //     unset($_SESSION['status']);
+                    // }
+                    if(isset($_SESSION['withdrawStatus'])) {
+                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['withdrawStatus'].'</p>';
+                        unset($_SESSION['withdrawStatus']);
+                    }
+                    if(isset($_SESSION['addStatus'])) {
+                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['addStatus'].'</p>';
+                        unset($_SESSION['addStatus']);
+                    }
+                    if(isset($_SESSION['deleteUser'])) {
+                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['deleteUser'].'</p>';
+                        unset($_SESSION['deleteUser']);
+                    }
+                ?>
                 <!-- <div class="message toast" style="display:<?= $hideDiv?> ?? inline-block">
                 <?php 
                     // if ( $withdrawSu == true) {

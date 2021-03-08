@@ -6,7 +6,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = (int) $id;
     $withdraw = $_POST['withdraw'] ?? 0;
     withdraw($id, $withdraw);
-    $_SESSION['redirect'] = true;
+    // $_SESSION['redirect'] = true;
+    // $_SESSION['status'] = "Operacija atlikta sėkmingai!";
     header('Location: '.URL);
     die;
 }
@@ -45,7 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?>Eur</p>
             <form action="<?= URL ?>withdraw.php?id=<?= $user['id'] ?>" method="post">
                 <p>Iveskite skaiciu kiek norite nuskaiciuoti:</p>
-                <input type="text" name="withdraw">
+                <input type="text" name="withdraw" value="<?= $user['currentAmount'] ?>">
+                <p>Eur</p>
                 <button type="submit">Nuskaicioti</button>
             </form>
         </div>

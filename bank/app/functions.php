@@ -63,49 +63,50 @@ function create(string $fName, string $lName, string $personId) : void
     $_SESSION['createUser'] = true;
 }
 
-
-
-function add(int $id, int $currentAmount) : void
+function add(int $id, float $addAmount) : void
 {
     $users = readData();
     $user = getUser($id);
     if(!$user) {
         return;
     }
-    if($currentAmount <= 0) {
-        $_SESSION['addStatus'] = false;
+    $addAmountround = round($addAmount, 2);
+    if($addAmountround <= 0) {
+        $_SESSION['addStatus'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
-    $user['currentAmount'] += $currentAmount;
+    $user['currentAmount'] += $addAmountround;
     deleteUser($id);
     $users = readData();
     $users[] = $user;
     writeData($users);
-    $_SESSION['addStatus'] = true;
+    $_SESSION['addStatus'] = 'Operacija atlikta sėkmingai!';
 }
 
-function withdraw(int $id, int $withdraw) : void
+function withdraw(int $id, float $withdraw) : void
 {
     $users = readData();
     $user = getUser($id);
     if(!$user) {
         return;
     }
+    $withdrawRound = round($withdraw, 2);
     if($withdraw <= 0) {
+        $_SESSION['withdrawStatus'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
-    $currentAmount = $user['currentAmount'];
-    $afterWithdraw = (int) $currentAmount - (int) $withdraw;
-    $afterWithdraw = (int) $afterWithdraw;
+    $currentAmount = (float) $user['currentAmount'];
+    $afterWithdraw = $currentAmount - $withdrawRound;
+    $afterWithdrawRound = round($afterWithdraw, 2);
     if($afterWithdraw >= 0) {
-        $user['currentAmount'] = $afterWithdraw;
+        $user['currentAmount'] = $afterWithdrawRound;
         deleteUser($id);
         $users = readData();
         $users[] = $user;
         writeData($users);
-        // $_SESSION['withdrawStatus'] = true;
+        $_SESSION['withdrawStatus'] = 'Operacija atlikta sėkmingai!';
     }  else {
-        // $_SESSION['withdrawStatus'] = false;
+        $_SESSION['withdrawStatus'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
 }
@@ -117,10 +118,9 @@ function deleteUser(int $id) : void
         if($user['id'] == $id) {
             unset($users[$key]);
             writeData($users);
-            $_SESSION['deleteUser'] = true;
             return;
         } else {
-            $_SESSION['deleteUser'] = false;
+            $_SESSION['deleteUser'] = 'Ivyko klaida! Bandykite dar karta.';
         }
     }
 };
@@ -150,16 +150,13 @@ function createAccountNum() : string
     return $accountNum;
 }
 
-function message($result) : void
-{
-    if($result == true) {
-        echo "<p>Operacija atlikta sekmingai!</p>";
-    } elseif ($result == false) {
-        echo "<p>Ivyko klaida, bandykite dar karta!</p>";
-    } else {
-        echo '';
-    }
-}
+// function message($result) : void
+// {
+//     if(isset($_SESSION['status'])) {
+//         echo '<p style="color:green;margin-left:80px;">'.$_SESSION['status'].'</p>';
+//         unset($_SESSION['status']);
+//     }
+// }
 /*
 //  accountNum - LT + 18num    personId - 11num
 [
