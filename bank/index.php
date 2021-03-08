@@ -21,7 +21,13 @@ require __DIR__.'/bootstrap.php';
         <div class="sarasas">
             <h3>Saskaitu sarasas:</h3>
             <ul class="account_list">
-                <?php foreach(readData() as $user) : ?>
+            <?php
+                $users = readData();
+                usort($users, function($userA, $userB) {
+                    return $userB <=> $userA;
+                })
+            ?>
+                <?php foreach($users as $user) : ?>
                     <div class="ul_item">
                         <h4>Vardas: <?= $user['fName'] ?> </h4>
                         <h4>Pavarde: <?= $user['lName'] ?> </h4>
