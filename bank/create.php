@@ -7,7 +7,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     _pc($_POST);
     $fName = (string) $_POST['fName'] ?? 'Bot';
     $lName = (string) $_POST['lName'] ?? 'Botbot';
-    $personId = (string) $_POST['personId'] ?? 00000000000;
+    $personId = (string) $_POST['personId'] ?? '00000000000';
+
     if (strlen($fName) <= 3 || empty($fName)) {
         $fNameErr = true;
     } elseif (isset($_POST['fName']) && !empty($_POST['fName']) && strlen($fname) > 3) {
@@ -19,8 +20,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (isset($_POST['lName']) && !empty($_POST['lName']) && strlen($lName) > 3) {
         $lName = (string) $_POST['lName'];
     }
-    
-    if (!isset($fNameErr) && !isset($lNameErr)) {
+
+    if (strlen($personId) < 11 || empty($personId)) {
+        $personIdErr = true;
+    } elseif (isset($_POST['personId']) && !empty($_POST['personId']) && strlen($personId) > 11) {
+        $users = readData();
+        foreach($users as $user) {
+            if($user['personId'] == $personId) {
+                return $personIdErr = true;
+            }
+        }
+        $personId = (int) $_POST['personId'];
+    }
+
+    if (!isset($fNameErr) && !isset($lNameErr) && !isset($personIdErr)) {
         create($fName, $lName, $personId);
         header('Location: '.URL);
         die;
@@ -75,6 +88,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="ul_item">
                     <label style="color: cornflowerblue;" for="personId">Asmens Kodas</label>
                     <input type="number" name="personId">
+                    <?php
+                        if(isset( $personIdErr)) {
+                            echo '<p>'.'Netaisyklingai suvesti duomenis.'.'</p>';
+                        }
+                    ?>
                 </div>
                 <br>
                 <button type="submit">Sukurti Saskaita</button>

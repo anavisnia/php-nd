@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET') {
             <p>Kliento Vardas: <?= $user['fName'] ?></p>
             <p>Kliento Pavarde: <?= $user['lName'] ?></p>
             <p>Kliento Saskaitos Nr.: <?= $user['accountNum'] ?></p>
-            <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?></p>
+            <p>Kliento Saskaitos Likutis: <?= $user['currentAmount'] ?>Eur</p>
 
             <form action="<?= URL ?>add.php?id=<?= $user['id'] ?>" method="post">
                 <p>Iveskite skaiciu kiek norite prideti:</p>

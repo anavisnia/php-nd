@@ -52,7 +52,7 @@ function getUser(int $id) : ?array
 //     writeData($users);
 // }
 
-function create(string $fName, string $lName, int $personId) : void
+function create(string $fName, string $lName, string $personId) : void
 {
     $users = readData();
     $id = getNextId();
@@ -103,9 +103,9 @@ function withdraw(int $id, int $withdraw) : void
         $users = readData();
         $users[] = $user;
         writeData($users);
-        $_SESSION['withdrawStatus'] = true;
+        // $_SESSION['withdrawStatus'] = true;
     }  else {
-        $_SESSION['withdrawStatus'] = false;
+        // $_SESSION['withdrawStatus'] = false;
         return;
     }
 }
