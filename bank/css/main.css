@@ -24,6 +24,7 @@
     padding: 10px 0px;
 }
 .account_list {
+    display: inline-block;
     list-style-type: none;
     text-align: justify;
     margin: 0px 40px;
@@ -48,7 +49,7 @@ form {
     margin: 15px;
 }
 .ul_item {
-    height: 50px;
+    height: auto;
 }
 .ul_item:nth-child(odd) {
     background-color: rgb(221, 221, 221);

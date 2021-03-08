@@ -53,7 +53,10 @@ require __DIR__.'/bootstrap.php';
             <ul class="account_list">
                 <?php foreach(readData() as $user) : ?>
                     <div class="ul_item">
+                        <h4>Vardas: <?= $user['fName'] ?> </h4>
+                        <h4>Pavarde: <?= $user['lName'] ?> </h4>
                         <h4>Saskaitos Nr. <?= $user['accountNum'] ?> </h4>
+                        <h4>Likutis: <?= $user['currentAmount'] ?> Eur</h4>
                         <form action="<?= URL ?>delete.php?id=<?= $user['id'] ?>" method="post">
                             <button type="submit">Istrinti</button>
                             <a href="<?= URL ?>add.php?id=<?= $user['id'] ?>">Prideti</a>
