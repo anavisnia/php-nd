@@ -56,6 +56,13 @@ function create(string $fName, string $lName, string $personId) : void
 {
     $users = readData();
     $id = getNextId();
+    foreach($users as $user) 
+    {
+        if($user['personId'] == $personId) {
+            $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
+            return;
+        }
+    }
     $user = ['id' => $id, 'fName' => $fName, 'lName' => $lName, 'accountNum' => createAccountNum(), 'personId' => $personId, 'currentAmount' => 0];
     // 2d array, jo sekantis index'as musu sukurtas useris
     $users[] = $user;
@@ -127,7 +134,15 @@ function deleteUser(int $id) : void
 
 function checkPersonId(string $personId)
 {
-
+    $users = readData();
+    foreach($users as $user) {
+        if($user['personId'] == $personId) {
+            $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
+            return;
+        } else {
+            return $personId;
+        }
+    }
     // be paskutinio kontrolinio skaiciaus
     // /^[3-6][3-9][0-9](?:0[1-9]|1[012])((?:0[1-9])|(?:1[0-2]))[0-9][0-9][1-9]/
 }
