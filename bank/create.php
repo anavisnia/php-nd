@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (strlen($fName) <= 3 || empty($fName)) {
         $fNameErr = true;
-    } elseif (isset($_POST['fName']) && !empty($_POST['fName']) && strlen($fname) > 3) {
+    } elseif (isset($_POST['fName']) && !empty($_POST['fName']) && strlen($fName) > 3) {
         $fName = (string) $_POST['fName'];
     }
 

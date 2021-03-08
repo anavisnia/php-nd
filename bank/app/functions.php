@@ -60,7 +60,7 @@ function create(string $fName, string $lName, string $personId) : void
     // 2d array, jo sekantis index'as musu sukurtas useris
     $users[] = $user;
     writeData($users);
-    $_SESSION['createUser'] = true;
+    $_SESSION['status'] = 'Operacija atlikta sėkmingai!';
 }
 
 function add(int $id, float $addAmount) : void
@@ -72,7 +72,7 @@ function add(int $id, float $addAmount) : void
     }
     $addAmountround = round($addAmount, 2);
     if($addAmountround <= 0) {
-        $_SESSION['addStatus'] = 'Ivyko klaida! Bandykite dar karta.';
+        $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
     $user['currentAmount'] += $addAmountround;
@@ -80,7 +80,7 @@ function add(int $id, float $addAmount) : void
     $users = readData();
     $users[] = $user;
     writeData($users);
-    $_SESSION['addStatus'] = 'Operacija atlikta sėkmingai!';
+    $_SESSION['status'] = 'Operacija atlikta sėkmingai!';
 }
 
 function withdraw(int $id, float $withdraw) : void
@@ -92,7 +92,7 @@ function withdraw(int $id, float $withdraw) : void
     }
     $withdrawRound = round($withdraw, 2);
     if($withdraw <= 0) {
-        $_SESSION['withdrawStatus'] = 'Ivyko klaida! Bandykite dar karta.';
+        $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
     $currentAmount = (float) $user['currentAmount'];
@@ -104,9 +104,9 @@ function withdraw(int $id, float $withdraw) : void
         $users = readData();
         $users[] = $user;
         writeData($users);
-        $_SESSION['withdrawStatus'] = 'Operacija atlikta sėkmingai!';
+        $_SESSION['status'] = 'Operacija atlikta sėkmingai!';
     }  else {
-        $_SESSION['withdrawStatus'] = 'Ivyko klaida! Bandykite dar karta.';
+        $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
         return;
     }
 }
@@ -120,16 +120,13 @@ function deleteUser(int $id) : void
             writeData($users);
             return;
         } else {
-            $_SESSION['deleteUser'] = 'Ivyko klaida! Bandykite dar karta.';
+            $_SESSION['status'] = 'Ivyko klaida! Bandykite dar karta.';
         }
     }
 };
 
-function checkPersonId(int $personId)
+function checkPersonId(string $personId)
 {
-    if(count($personId) ) {
-
-    }
 
     // be paskutinio kontrolinio skaiciaus
     // /^[3-6][3-9][0-9](?:0[1-9]|1[012])((?:0[1-9])|(?:1[0-2]))[0-9][0-9][1-9]/

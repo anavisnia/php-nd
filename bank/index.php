@@ -43,17 +43,9 @@ usort($users, function($userA, $userB) {
                     //     echo '<p style="color:green;margin-left:80px;">'.$_SESSION['status'].'</p>';
                     //     unset($_SESSION['status']);
                     // }
-                    if(isset($_SESSION['withdrawStatus'])) {
-                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['withdrawStatus'].'</p>';
-                        unset($_SESSION['withdrawStatus']);
-                    }
-                    if(isset($_SESSION['addStatus'])) {
-                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['addStatus'].'</p>';
-                        unset($_SESSION['addStatus']);
-                    }
-                    if(isset($_SESSION['deleteUser'])) {
-                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['deleteUser'].'</p>';
-                        unset($_SESSION['deleteUser']);
+                    if(isset($_SESSION['status'])) {
+                        echo '<p style="color:green;margin-left:80px;">'.$_SESSION['status'].'</p>';
+                        unset($_SESSION['status']);
                     }
                 ?>
                 <!-- <div class="message toast" style="display:<?= $hideDiv?> ?? inline-block">
