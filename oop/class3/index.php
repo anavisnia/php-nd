@@ -2,7 +2,6 @@
 
 require 'Krepsys.php';
 require 'Grybas.php';
-require 'Helper.php';
 
 $grybas1 = new Grybas;
 $grybas2 = new Grybas;

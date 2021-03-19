@@ -8,15 +8,6 @@ class Stikline {
         $this->turis = $turis;
     }
 
-    // public function ipilti($kiekis) : void
-    // {
-    //     if($kiekis > $this->turis || $this->kiekis > $this->turis) {
-    //         $this->kiekis = $this->turis;
-    //     } else if($kiekis < 0) {
-    //         $kiekis = 0;
-    //     }
-    //     $this->kiekis += $kiekis;
-    // }
     public function ipilti($kiekis) : void
     {
         if($kiekis > $this->turis || $this->kiekis > $this->turis) {
@@ -32,7 +23,5 @@ class Stikline {
         $this->kiekis = 0;
         return $likutis;
     }
-
-
 
 }
