@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CalcController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('calc/{operation}/{num1}/{num2}', [CalcController::class, 'index']);
