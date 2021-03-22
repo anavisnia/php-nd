@@ -17,4 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('calc/{operation}/{num1}/{num2}', [CalcController::class, 'index']);
+Route::get('calc/mult/{num1}/{num2}', [CalcController::class, 'mult']);
+
+Route::get('calc/add/{num1}/{num2}', [CalcController::class, 'add']);
+
+Route::get('calc/sub/{num1}/{num2}', [CalcController::class, 'sub']);
+
+Route::get('calc/div/{num1}/{num2}', [CalcController::class, 'div']);
+
+Route::get('calc/mod/{num1}/{num2}', [CalcController::class, 'mod']);
