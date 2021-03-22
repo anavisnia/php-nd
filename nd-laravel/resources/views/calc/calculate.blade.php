@@ -1,10 +1,10 @@
 @extends('layout.main')
 @section('title') Calculator @endsection
 @section('hero')
-<h1 style="width:100%;text-align:center;font-size:35px;color:blue;margin-top:240px">Let's calculate!</h1>
-<div style="width:100%;text-align:center;font-size:28px;">
+<h1 class="hero">Let's calculate!</h1>
+<div class="hero">
     <p>Your chosen method: {{ $op }}</p>
-    <p>Your chosen numbers are <span style="color:blue;">{{ $firstNum }}</span> and <span style="color:blue;">{{$secNum}}</span></p>
-    <p>Answer: <span style="color:blue;">{{$answer}}</span></p>
+    <p>Your chosen numbers are <span class="numColor">{{ $firstNum }}</span> and <span class="numColor">{{$secNum}}</span></p>
+    <p>Answer: <span class="numColor">{{$answer}}</span></p>
 </div>
 @endsection
